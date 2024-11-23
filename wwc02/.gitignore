@@ -1,0 +1,12 @@
+# Ignore system files
+.DS_Store
+
+# Ignore log files
+log/development.log
+
+# Ignore app-specific files
+app/.DS_Store
+app/views/.DS_Store
+
+# Ignore deleted directory
+wwc02
