@@ -82,12 +82,14 @@
   font-style: italic;
 }
 
+/* Navigation Button Styles */
 .nav-button {
   font-family: "IBM Plex Sans", serif;
   font-weight: 400;
   font-style: normal;
   font-size: 12px;
   display: flex;
+  flex-direction: column; /* Stack items vertically */
   width: 100px;
   height: 30px;
   justify-content: center;
@@ -100,13 +102,17 @@
   border-bottom: 4px solid black;
   border-left: 4px solid black;
   background: #FFF;
+  position: relative; /* Ensure dropdown menu is positioned relative to button */
+  /* Hover state for the nav button itself */
+  /* Anchor Tag Inside Buttons */
 }
-
-/* Apply styles to anchor tags inside .nav-button */
+.nav-button:hover .dropdown-menu {
+  display: block; /* Show the dropdown when hovering over the parent nav button */
+}
 .nav-button a {
-  text-decoration: none; /* Remove underline */
-  color: inherit; /* Remove default blue color */
-  font-family: inherit; /* Inherit font family from parent */
+  text-decoration: none;
+  color: inherit;
+  font-family: inherit;
   font-weight: inherit;
   font-style: inherit;
   font-size: inherit;
@@ -117,24 +123,63 @@
   height: 30px;
   gap: 4px;
   flex-shrink: 0;
-  border-radius: 8px;
-  border: 2px solid black;
+  border-radius: 4px;
   background: #FFF;
 }
-
-/* Hover state for anchor tags */
 .nav-button a:hover {
   background: #FFFFBE;
-  border: 2px solid black;
 }
-
-/* Active state for anchor tags */
 .nav-button a.active {
-  background-color: black; /* Example background color for active link */
-  color: white; /* Change the text color for active link */
-  font-weight: medium; /* Optional: make active link bold */
+  background-color: black;
+  color: white;
+  font-weight: medium;
 }
 
+/* Dropdown Menu Styles */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  min-width: 160px;
+  z-index: 1;
+  border-radius: 8px;
+  padding: 0px;
+  overflow: hidden;
+}
+
+/* Dropdown Link Styling */
+.dropdown-menu a {
+  color: black;
+  text-decoration: none;
+  text-align: left;
+  display: block;
+  width: 100%;
+  padding: 8px 16px;
+  height: 30px;
+  transition: all 0.3s ease;
+  border-radius: 0px;
+}
+.dropdown-menu a:hover {
+  background-color: #00007D;
+  color: white;
+  border-radius: 0px;
+}
+
+/* First and last links to respect dropdown menu's border-radius */
+.dropdown-menu a:first-child {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.dropdown-menu a:last-child {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+/* Navigation Link Styling */
 .nav-link {
   font-family: "IBM Plex Sans", serif;
   font-weight: 400;
@@ -222,14 +267,12 @@ html, body {
   margin: 0;
 }
 
-
 body {
   position: relative;
   background: linear-gradient(#C3DCE1, #64A5D7);
   text-align: center;
   vertical-align: middle;
 }
-
 
 .clouds {
   opacity: 0.4;
@@ -258,9 +301,8 @@ body {
 }
 
 body.about-me {
-  background: linear-gradient(#C8DCE1, #C8DCE1); /* Custom gradient for about-me */
+  background-color: #f0f0f0; /* Example: light gray background */
 }
-
 
 /* Clouds animations */
 .clouds {
