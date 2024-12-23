@@ -14,6 +14,11 @@ body {
   background: linear-gradient($windows-blue-light, $windows-blue);
 }
 
+body.about-me {
+  background-color: #f0f0f0; /* Example: light gray background */
+}
+
+
 /* Clouds animations */
 
 .clouds {

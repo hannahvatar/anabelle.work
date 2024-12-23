@@ -216,18 +216,20 @@
 }
 
 html, body {
-  background-color: linear-gradient(#9BC8E1, #64A5D7); /* Adjust gradient if needed */
+  background-color: linear-gradient(#C3DCE1, #64A5D7); /* Adjust gradient if needed */
   height: 100%;
   padding: 0;
   margin: 0;
 }
 
+
 body {
   position: relative;
-  background: linear-gradient(#9BC8E1, #64A5D7);
+  background: linear-gradient(#C3DCE1, #64A5D7);
   text-align: center;
   vertical-align: middle;
 }
+
 
 .clouds {
   opacity: 0.4;
@@ -252,8 +254,13 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background: linear-gradient(#9BC8E1, #64A5D7);
+  background: linear-gradient(#C3DCE1, #64A5D7);
 }
+
+body.about-me {
+  background: linear-gradient(#C8DCE1, #C8DCE1); /* Custom gradient for about-me */
+}
+
 
 /* Clouds animations */
 .clouds {
