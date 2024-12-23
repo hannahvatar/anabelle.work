@@ -6,11 +6,10 @@
 @use 'clouds' as *;
 
 body {
-  font-family: 'Oswald', sans-serif;
   height: 100%;
   margin: 0;
   padding: 0;
-  background: linear-gradient(#333, #000);
+  background: linear-gradient($windows-blue-light, $windows-blue);
 }
 
 .clouds {
@@ -33,7 +32,7 @@ body {
 }
 
 .clouds-clouds_1 {
-  background-image: url('https://s.cdpn.io/15514/clouds_1.png');
+  background-image: url('https://res.cloudinary.com/diwuyv3c8/image/upload/v1734971669/cloud_01_hcsl6u.png');
   animation: clouds-loop-clouds_1 15s infinite linear;
 }
 

@@ -1,9 +1,10 @@
 @use 'sass:list';
+@use 'variables' as *;
 
 // Cloud vars
 $clouds: (
   ("clouds_2", "https://s.cdpn.io/15514/clouds_2.png", 1000px, 20s),
-  ("clouds_1", "https://s.cdpn.io/15514/clouds_1.png", 1000px, 15s),
+  ("clouds_1", "https://res.cloudinary.com/diwuyv3c8/image/upload/v1734971669/cloud_01_hcsl6u.png", 1000px, 15s),
   ("clouds_3", "https://s.cdpn.io/15514/clouds_3.png", 1579px, 17s)
 );
 
@@ -26,23 +27,17 @@ $clouds: (
 
 // General Styling
 html, body {
-  font-family: 'Oswald', sans-serif;
+  background-color: linear-gradient($windows-blue-light, $windows-blue); /* Adjust gradient if needed */
   height:  100%;
   padding: 0;
   margin:  0;
 }
 
 body {
-  background: linear-gradient(#333, #000);  // Gradient background
+  position: relative;
+  background: linear-gradient($windows-blue-light, $windows-blue);  // Gradient background
   text-align: center;
   vertical-align: middle;
-
-  a {
-    color: #b8956b;
-    font-size: 1.5em;
-    text-decoration: none;
-    text-shadow: 0 -1px 0 rgba(#b8956b, 0.6), 0 2px 3px #000;
-  }
 }
 
 .clouds {
