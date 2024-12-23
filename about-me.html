@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me</title>
+  <link rel="stylesheet" href="src/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Main container -->
+  <div class="main-container">
+    <!-- Navbar container -->
+    <div id="navbar"></div> <!-- This is where the navbar will be injected -->
+
+    <!-- Content of About Me Page -->
+    <div class="about-content">
+      Hello world
+    </div>
+  </div>
+
+  <!-- JavaScript Files -->
+  <script src="src/js/app.js"></script>
+  <script src="src/js/components/navbar.js"></script>
+
+  <!-- Load the navbar using JavaScript -->
+  <script>
+    fetch('navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        // Insert the navbar into the DOM
+        document.getElementById('navbar').innerHTML = data;
+
+        // Add active class based on the current page
+        const currentPage = window.location.pathname.split("/").pop(); // Get the current page
+        const navButtons = document.querySelectorAll(".nav-button a");
+
+        navButtons.forEach(link => {
+          const href = link.getAttribute("href");
+          if (href === currentPage) {
+            link.classList.add("active"); // Add active class to the correct link
+          }
+        });
+      });
+  </script>
+</body>
+</html>

@@ -101,18 +101,38 @@
   border-left: 4px solid black;
   background: #FFF;
 }
-.nav-button:hover {
-  width: 100px;
-  padding: 1px;
-  background: #FFFFBE;
-  border-top: 2px solid black;
-  border-right: 2px solid black;
-  border-bottom: 2px solid black;
-  border-left: 2px solid black;
+
+/* Apply styles to anchor tags inside .nav-button */
+.nav-button a {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Remove default blue color */
+  font-family: inherit; /* Inherit font family from parent */
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 30px;
+  gap: 4px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  border: 2px solid black;
+  background: #FFF;
 }
-.nav-button:active {
-  background: black;
-  color: white;
+
+/* Hover state for anchor tags */
+.nav-button a:hover {
+  background: #FFFFBE;
+  border: 2px solid black;
+}
+
+/* Active state for anchor tags */
+.nav-button a.active {
+  background-color: black; /* Example background color for active link */
+  color: white; /* Change the text color for active link */
+  font-weight: medium; /* Optional: make active link bold */
 }
 
 .nav-link {
