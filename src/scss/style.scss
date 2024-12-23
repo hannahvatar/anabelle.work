@@ -33,17 +33,17 @@ body {
 
 .clouds-clouds_1 {
   background-image: url('https://res.cloudinary.com/diwuyv3c8/image/upload/v1734971669/cloud_01_hcsl6u.png');
-  animation: clouds-loop-clouds_1 15s infinite linear;
+  animation: clouds-loop-clouds_1 25s infinite linear;
 }
 
 .clouds-clouds_2 {
   background-image: url('https://s.cdpn.io/15514/clouds_2.png');
-  animation: clouds-loop-clouds_2 20s infinite linear;
+  animation: clouds-loop-clouds_2 30s infinite linear;
 }
 
 .clouds-clouds_3 {
   background-image: url('https://s.cdpn.io/15514/clouds_3.png');
-  animation: clouds-loop-clouds_3 17s infinite linear;
+  animation: clouds-loop-clouds_3 27s infinite linear;
 }
 
 @keyframes clouds-loop-clouds_1 {
