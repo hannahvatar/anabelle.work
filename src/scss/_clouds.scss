@@ -1,0 +1,64 @@
+@use 'sass:list';
+
+// Cloud vars
+$clouds: (
+  ("clouds_2", "https://s.cdpn.io/15514/clouds_2.png", 1000px, 20s),
+  ("clouds_1", "https://s.cdpn.io/15514/clouds_1.png", 1000px, 15s),
+  ("clouds_3", "https://s.cdpn.io/15514/clouds_3.png", 1579px, 17s)
+);
+
+// Animation & keyframes
+@each $cloud in $clouds {
+  $name: list.nth($cloud, 1);
+  $path: list.nth($cloud, 2);
+  $width: list.nth($cloud, 3);
+  $duration: list.nth($cloud, 4);
+
+  @keyframes clouds-loop-#{$name} {
+    to { background-position: -#{$width} 0; }
+  }
+
+  .clouds-#{$name} {
+    background-image: url(#{$path});
+    animation: clouds-loop-#{$name} #{$duration} infinite linear;
+  }
+}
+
+// General Styling
+html, body {
+  font-family: 'Oswald', sans-serif;
+  height:  100%;
+  padding: 0;
+  margin:  0;
+}
+
+body {
+  background: linear-gradient(#333, #000);  // Gradient background
+  text-align: center;
+  vertical-align: middle;
+
+  a {
+    color: #b8956b;
+    font-size: 1.5em;
+    text-decoration: none;
+    text-shadow: 0 -1px 0 rgba(#b8956b, 0.6), 0 2px 3px #000;
+  }
+}
+
+.clouds {
+  opacity: 0.4;
+  pointer-events: none;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+}
+
+.clouds-1, .clouds-2, .clouds-3 {
+  background-repeat: repeat-x;
+  position: absolute;
+  top: 0;
+  height: 500px;
+}
