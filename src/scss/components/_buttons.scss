@@ -1,0 +1,57 @@
+.nav-button {
+  font-family: "IBM Plex Sans", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
+  display: flex;
+  width: 100px;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+  border-bottom: 4px solid black;
+  border-left: 4px solid black;
+  background: #FFF;
+
+  &:hover {
+    width: 100px;
+    padding: 1px;
+    background: #FFFFBE;
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    border-left: 2px solid black;
+  }
+
+  &:active {
+    background: black;
+    color:white;
+  }
+}
+
+.nav-link {
+  font-family: "IBM Plex Sans", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
+  text-decoration: underline;
+  display: flex;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+
+  &:hover {
+    background: #FFFFBE;
+  }
+
+  &:active {
+    background: black;
+    color:white;
+  }
+}

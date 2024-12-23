@@ -3,14 +3,18 @@
 @use 'base/typography' as *;
 @use 'components/buttons' as *;
 @use 'components/navbar' as *;
+@use 'components/containers' as *;
 @use 'clouds' as *;
 
 body {
+  font-family: 'IBM Plex Sans', sans-serif;
   height: 100%;
   margin: 0;
   padding: 0;
   background: linear-gradient($windows-blue-light, $windows-blue);
 }
+
+/* Clouds animations */
 
 .clouds {
   position: absolute;
