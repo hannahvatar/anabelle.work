@@ -235,6 +235,15 @@
   padding: 20px;
 }
 
+.nav-button-wrapper {
+  position: relative;
+  width: 104px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .nav-button {
   font-family: "IBM Plex Sans", serif;
   font-weight: 400;
