@@ -1,5 +1,8 @@
 {
   "devDependencies": {
     "sass": "^1.83.0"
+  },
+  "dependencies": {
+    "swup": "^4.8.1"
   }
 }

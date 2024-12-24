@@ -4,52 +4,56 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Anabelle's Work</title>
-  <!-- Link to the compiled CSS -->
   <link rel="stylesheet" href="src/style.css">
-  <!-- Link to IBM Plex Sans -->
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700&display=swap" rel="stylesheet">
 </head>
-<body>
-  <!-- Main container -->
-  <div class="main-container">
-    <!-- Navigation Bar -->
-    <div class="container-fluid">
-      <div class="nav-link">Home</div>
-      <div class="navbar">
-        <div class="nav-button" id="about-link">
-          <a href="about-me.html">About Me</a>
-        </div>
-        <div class="nav-button" id="career-link">
-          <a href="career-timeline.html">Career Timeline</a>
-        </div>
-        <div class="nav-button" id="case-studies-link">
-          <a href="#">Case Studies</a>
-          <!-- Dropdown Menu -->
-          <div class="dropdown-menu">
-            <a href="case-study-1.html">Grrunch</a>
-            <a href="case-study-2.html">Desjardins Design System</a>
-            <a href="case-study-3.html">Turo UI/Web Design</a>
-          </div>
-        </div>
-        <div class="nav-button" id="resume-link">
-          <a href="resume.html">Resume</a>
-        </div>
-        <div class="nav-button" id="linkedin-link">
-          <a href="https://www.linkedin.com">LinkedIn</a>
+<body class="home">
+  <!-- Fixed Navigation Bar -->
+  <div class="container-fluid">
+    <div class="nav-link">Home</div>
+    <div class="navbar">
+      <div class="nav-button" id="about-link">
+        <a href="about-me.html">About Me</a>
+      </div>
+      <div class="nav-button" id="career-link">
+        <a href="career-timeline.html">Career Timeline</a>
+      </div>
+      <div class="nav-button" id="case-studies-link">
+        <a href="#">Case Studies</a>
+        <!-- Dropdown Menu -->
+        <div class="dropdown-menu">
+          <a href="case-study-1.html">Grrunch</a>
+          <a href="case-study-2.html">Desjardins Design System</a>
+          <a href="case-study-3.html">Turo UI/Web Design</a>
         </div>
       </div>
+      <div class="nav-button" id="resume-link">
+        <a href="resume.html">Resume</a>
+      </div>
+      <div class="nav-button" id="linkedin-link">
+        <a href="https://www.linkedin.com">LinkedIn</a>
+      </div>
     </div>
+  </div>
 
-    <!-- Clouds Animation -->
-    <div class="clouds">
-      <div class="clouds-clouds_1"></div>
-      <div class="clouds-clouds_2"></div>
-      <div class="clouds-clouds_3"></div>
+  <!-- Clouds Animation (only on index page) -->
+  <div class="clouds">
+    <div class="clouds-clouds_1"></div>
+    <div class="clouds-clouds_2"></div>
+    <div class="clouds-clouds_3"></div>
+  </div>
+
+  <!-- Swup container -->
+  <div id="swup" class="swup-transition-main">
+    <div class="main-container">
+      <div class="index-content">
+        Welcome to Anabelle's Work!
+      </div>
     </div>
   </div>
 
   <!-- JavaScript Files -->
-  <script src="src/js/app.js"></script>
-  <script src="src/js/components/navbar.js"></script>
+  <script src="src/js/app.js" type="module"></script>
+  <script src="src/js/components/navbar.js" defer></script>
 </body>
 </html>

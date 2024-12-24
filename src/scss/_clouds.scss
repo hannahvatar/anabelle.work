@@ -24,36 +24,3 @@ $clouds: (
     animation: clouds-loop-#{$name} #{$duration} infinite linear;
   }
 }
-
-// General Styling
-html, body {
-  background-color: linear-gradient($windows-blue-light, $windows-blue); /* Adjust gradient if needed */
-  height:  100%;
-  padding: 0;
-  margin:  0;
-}
-
-body {
-  position: relative;
-  background: linear-gradient($windows-blue-light, $windows-blue);  // Gradient background
-  text-align: center;
-  vertical-align: middle;
-}
-
-.clouds {
-  opacity: 0.4;
-  pointer-events: none;
-  position: absolute;
-  overflow: hidden;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-}
-
-.clouds-1, .clouds-2, .clouds-3 {
-  background-repeat: repeat-x;
-  position: absolute;
-  top: 0;
-  height: 500px;
-}

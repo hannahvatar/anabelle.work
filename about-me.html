@@ -8,40 +8,46 @@
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Main container -->
-  <div class="main-container">
-    <!-- Navbar container -->
-    <div id="navbar"></div> <!-- This is where the navbar will be injected -->
+  <!-- Fixed Navigation Bar -->
+  <div class="container-fluid">
+    <div class="nav-link">Home</div>
+    <div class="navbar">
+      <div class="nav-button" id="about-link">
+        <a href="about-me.html">About Me</a>
+      </div>
+      <div class="nav-button" id="career-link">
+        <a href="career-timeline.html">Career Timeline</a>
+      </div>
+      <div class="nav-button" id="case-studies-link">
+        <a href="#">Case Studies</a>
+        <!-- Dropdown Menu -->
+        <div class="dropdown-menu">
+          <a href="case-study-1.html">Grrunch</a>
+          <a href="case-study-2.html">Desjardins Design System</a>
+          <a href="case-study-3.html">Turo UI/Web Design</a>
+        </div>
+      </div>
+      <div class="nav-button" id="resume-link">
+        <a href="resume.html">Resume</a>
+      </div>
+      <div class="nav-button" id="linkedin-link">
+        <a href="https://www.linkedin.com">LinkedIn</a>
+      </div>
+    </div>
+  </div>
 
-    <!-- Content of About Me Page -->
-    <div class="about-content">
-      Hello world
+  <!-- Swup container -->
+  <div id="swup" class="swup-transition-main">
+    <div class="main-container">
+      <div class="about-content">
+        <h1>About Me</h1>
+        <p>Hello world! This is the About Me page.</p>
+      </div>
     </div>
   </div>
 
   <!-- JavaScript Files -->
-  <script src="src/js/app.js"></script>
-  <script src="src/js/components/navbar.js"></script>
-
-  <!-- Load the navbar using JavaScript -->
-  <script>
-    fetch('navbar.html')
-      .then(response => response.text())
-      .then(data => {
-        // Insert the navbar into the DOM
-        document.getElementById('navbar').innerHTML = data;
-
-        // Add active class based on the current page
-        const currentPage = window.location.pathname.split("/").pop(); // Get the current page
-        const navButtons = document.querySelectorAll(".nav-button a");
-
-        navButtons.forEach(link => {
-          const href = link.getAttribute("href");
-          if (href === currentPage) {
-            link.classList.add("active"); // Add active class to the correct link
-          }
-        });
-      });
-  </script>
+  <script src="src/js/app.js" type="module"></script>
+  <script src="src/js/components/navbar.js" defer></script>
 </body>
 </html>
