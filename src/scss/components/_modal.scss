@@ -1,6 +1,4 @@
-// Generic modal overlay styles
 .modal-overlay {
-  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -9,31 +7,48 @@
   background: rgba(200, 220, 225, 0.98);
   z-index: 1000;
   opacity: 0;
-  transition: opacity 0.3s ease;
-  overflow-y: auto;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
   padding: 40px 0;
+  overflow: auto; // Allow scrolling if needed
 
   &.active {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     opacity: 1;
+    visibility: visible;
   }
 }
 
 .modal-content {
-  position: relative;
-  width: 90%;
-  max-width: 1200px;
-  max-height: 80vh;
-  overflow-y: auto;
+  width: 80%;
+  max-width: 540px;
+  max-height: 90vh; // Maximum 80% of viewport height
+  height: auto; // Allow content to determine height
+  overflow-y: auto; // Enable internal scrolling
   background: white;
   padding: 40px;
+  margin: 2vh;
   border-radius: 12px;
-  border-top: 2px solid black;
-  border-right: 2px solid black;
-  border-bottom: 4px solid black;
-  border-left: 4px solid black;
+  border: 2px solid black;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  // Ensure scrollbar is always visible for better UX
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+  }
 
   h2 {
     font-family: "IBM Plex Sans", serif;
