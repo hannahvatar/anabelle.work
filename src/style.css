@@ -108,6 +108,15 @@ h2 {
   margin-bottom: 0 !important;
 }
 
+h4 {
+  margin-bottom: 0 !important;
+}
+
+p {
+  margin-top: 1%;
+  margin-bottom: 0 !important;
+}
+
 /* Navigation Button Styles */
 .nav-button {
   font-family: "IBM Plex Sans", serif;
