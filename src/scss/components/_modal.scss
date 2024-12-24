@@ -53,7 +53,7 @@
   height: auto; // Allow content to determine height
   overflow-y: auto; // Enable internal scrolling
   background: white;
-  padding: 40px;
+  padding: 2rem;
   margin: 2vh;
   border-radius: 12px;
   border: 2px solid black;
@@ -107,11 +107,12 @@
   position: relative;
   padding: 20px 0;
 
+
   &::before {
     content: '';
     position: absolute;
-    left: 50px;
-    top: 0;
+    left: 48px;
+    top: 24px;
     bottom: 0;
     width: 2px;
     background: black;
@@ -120,28 +121,33 @@
 
 .timeline-item {
   display: flex;
-  margin-bottom: 40px;
+  margin-bottom: 16px;
   position: relative;
 }
 
 .timeline-date {
-  width: 100px;
-  text-align: right;
-  padding-right: 30px;
+  display: flex;
+  justify-content: flex-start;
+  width: 60px;
+  padding-right: 4px;
   font-weight: 600;
+  text-align: left;
 }
 
 .timeline-info {
+
   flex: 1;
   background: white;
-  padding: 20px;
+  padding: 1rem;
   border-radius: 8px;
   border-top: 2px solid black;
   border-right: 2px solid black;
   border-bottom: 4px solid black;
   border-left: 4px solid black;
 
+
   h3 {
+    margin-top: 0;
     margin-bottom: 8px;
     font-weight: 500;
   }
@@ -150,4 +156,9 @@
     font-size: 14px;
     line-height: 1.5;
   }
+}
+
+.card-icon {
+display: flex;
+justify-content: flex-end;
 }
