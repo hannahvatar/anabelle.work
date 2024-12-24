@@ -1,6 +1,6 @@
 # My Portfolio
 
-Welcome to my portfolio! 🎉 This is where I showcase my skills, projects, and the unique journey that shaped me into the Product Designer and developer I am today. Oh, and fun fact—I fully coded this site myself. 🌟
+Welcome to my portfolio! 🎉 This is where I showcase my skills, projects, and the unique journey that shaped me into the Product Designer and developer I am today.🌟
 
 ---
 
@@ -21,7 +21,6 @@ Here’s the stack that powers this site:
 - **HTML5** for semantic structure.
 - **SCSS** for modular and maintainable styling.
 - **JavaScript** for interactivity and animations.
-- **Swup** for smooth page transitions.
 - **GitHub Pages** for hosting.
 
 ---
