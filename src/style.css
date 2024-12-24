@@ -203,20 +203,26 @@
 
 /* Global container */
 .container-fluid {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
   display: flex;
-  justify-content: center; /* Centers the navbar */
-  padding: 0; /* Remove any padding if necessary */
+  justify-content: center;
+  padding: 0;
+  background-color: transparent !important;
 }
 
 /* Navbar styling */
 .navbar {
   display: flex;
-  justify-content: center; /* Centers the navbar items horizontally */
-  align-items: center; /* Aligns items vertically */
-  gap: 20px; /* Space between the navbar items */
-  width: 100%; /* Ensures navbar takes full width */
-  max-width: 1200px; /* Optional: Limits the width to make it look nicer */
-  margin: 0 auto; /* Centers navbar horizontally within the container */
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .nav-container {
@@ -226,6 +232,7 @@
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
+  padding: 20px;
 }
 
 .nav-button {
@@ -246,8 +253,12 @@
   border-right: 2px solid black;
   border-bottom: 4px solid black;
   border-left: 4px solid black;
-  background: #FFF;
+  background: transparent;
   position: relative;
+}
+.nav-button:hover {
+  border-width: 2px;
+  background: transparent;
 }
 .nav-button:hover .dropdown-menu {
   display: block;
@@ -269,13 +280,18 @@
   border-radius: 4px;
   background: #FFF;
 }
-.nav-button a:hover {
-  background: #FFFFBE;
-}
 .nav-button a.active {
   background-color: black;
   color: white;
   font-weight: medium;
+}
+.nav-button a.active:hover {
+  background-color: black;
+  color: white;
+}
+.nav-button a:hover {
+  background: #FFFFBE;
+  color: black;
 }
 
 /* Dropdown Menu Styles */
