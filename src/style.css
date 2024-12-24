@@ -1,3 +1,9 @@
+.uncial-antiqua-regular {
+  font-family: "Uncial Antiqua", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .ibm-plex-sans-thin {
   font-family: "IBM Plex Sans", serif;
   font-weight: 100;
@@ -80,6 +86,17 @@
   font-family: "IBM Plex Sans", serif;
   font-weight: 700;
   font-style: italic;
+}
+
+.home-title {
+  font-family: "Uncial Antiqua", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 50px;
+  text-align: center;
+  max-width: 540px;
+  z-index: 1;
+  margin-top: 40px;
 }
 
 /* Navigation Button Styles */
@@ -236,7 +253,7 @@
 
 .nav-button {
   font-family: "IBM Plex Sans", serif;
-  font-weight: 400;
+  font-weight: 500;
   font-style: normal;
   font-size: 12px;
   display: flex;
@@ -302,7 +319,7 @@
   background-color: #f9f9f9;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
   width: 180px;
-  z-index: 1;
+  z-index: 2;
   border-radius: 8px;
   padding: 0px;
   overflow: hidden;

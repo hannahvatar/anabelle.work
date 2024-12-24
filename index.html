@@ -6,17 +6,22 @@
   <title>Anabelle's Work</title>
   <link rel="stylesheet" href="src/style.css">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap" rel="stylesheet">
+
+  <script src="https://unpkg.com/feather-icons"></script>
 </head>
 <body class="home">
-  <!-- Fixed Navigation Bar -->
+  <!-- Navigation Bar -->
   <div class="container-fluid">
     <!--<div class="nav-link">Home</div>-->
     <div class="navbar">
 
       <div class="nav-button-wrapper">
-      <div class="nav-button" id="about-link">
-        <a href="about-me.html">About Me</a>
-      </div>
+        <div class="nav-button" id="about-link">
+          <a href="#" id="openAboutMeModal">About Me</a>
+        </div>
       </div>
 
       <div class="nav-button-wrapper">
@@ -39,18 +44,73 @@
 
       <div class="nav-button-wrapper">
       <div class="nav-button" id="resume-link">
-        <a href="resume.html">Resume</a>
+        <a href="resume.html">Resume
+          <i data-feather="download"></i>
+        </a>
+
       </div>
      </div>
 
      <div class="nav-button-wrapper">
       <div class="nav-button" id="linkedin-link">
-        <a href="https://www.linkedin.com">LinkedIn</a>
+        <a href="https://www.linkedin.com">LinkedIn
+          <i data-feather="external-link"></i>
+        </a>
       </div>
      </div>
 
+     <div class="nav-button-wrapper">
+      <div class="nav-button" id="linkedin-link">
+        <a href="https://www.linkedin.com">Call Me
+          <i data-feather="phone"></i>
+        </a>
+      </div>
+     </div>
+
+     <div class="nav-button-wrapper">
+      <div class="nav-button" id="linkedin-link">
+        <a href="https://www.linkedin.com">Email Me
+          <i data-feather="mail"></i>
+        </a>
+      </div>
+     </div>
+
+
     </div>
   </div>
+
+  <!-- End Navigation Bar -->
+
+   <!-- Main content -->
+    <div class="container-fluid">
+      <div class="home-title">I am the Unicorn you have been looking for</div>
+    </div>
+
+   <!-- End Main content -->
+
+<!-- About Me Modal -->
+<div class="modal-overlay" id="aboutMeModal">
+  <div class="modal-content">
+    <button class="close-button" id="closeAboutMeModal">&times;</button>
+    <h2>About Me</h2>
+    <div class="about-me-content">
+      <div class="about-me-section">
+        <h3>Professional Background</h3>
+        <p>A brief overview of your professional journey, skills, and passion.</p>
+      </div>
+
+      <div class="about-me-section">
+        <h3>Personal Interests</h3>
+        <p>Share some personal insights, hobbies, or things that drive you.</p>
+      </div>
+
+      <div class="about-me-section">
+        <h3>Design Philosophy</h3>
+        <p>Explain your approach to design, what inspires you, and your core principles.</p>
+      </div>
+    </div>
+  </div>
+</div>
 
   <!-- Career Timeline Modal -->
   <div class="modal-overlay" id="timelineModal">
@@ -77,18 +137,10 @@
     <div class="clouds-clouds_3"></div>
   </div>
 
-  <!-- Swup container
-  <div id="swup" class="swup-transition-main">
-    <div class="main-container">
-      <div class="index-content">
-        Welcome to Anabelle's Work!
-      </div>
-    </div>
-  </div>
--->
   <!-- JavaScript Files -->
   <script src="src/js/app.js" type="module"></script>
   <script src="src/js/components/navbar.js" defer></script>
   <script src="src/js/components/modal.js" defer></script>
+  <script>feather.replace();</script>
 </body>
 </html>
