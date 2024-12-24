@@ -10,7 +10,7 @@
 <body class="home">
   <!-- Fixed Navigation Bar -->
   <div class="container-fluid">
-    <div class="nav-link">Home</div>
+    <!--<div class="nav-link">Home</div>-->
     <div class="navbar">
 
       <div class="nav-button-wrapper">
@@ -21,7 +21,7 @@
 
       <div class="nav-button-wrapper">
       <div class="nav-button" id="career-link">
-        <a href="career-timeline.html">Career Timeline</a>
+        <a href="#" id="openTimelineModal">Career Timeline</a>
       </div>
       </div>
 
@@ -52,6 +52,24 @@
     </div>
   </div>
 
+  <!-- Career Timeline Modal -->
+  <div class="modal-overlay" id="timelineModal">
+    <div class="modal-content">
+      <button class="close-button" id="closeTimelineModal">&times;</button>
+      <h2>Career Timeline</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">2024</div>
+          <div class="timeline-info">
+            <h3>Your Current Role</h3>
+            <p>Description of your current position and achievements</p>
+          </div>
+        </div>
+        <!-- Add more timeline items as needed -->
+      </div>
+    </div>
+  </div>
+
   <!-- Clouds Animation (only on index page) -->
   <div class="clouds">
     <div class="clouds-clouds_1"></div>
@@ -71,5 +89,6 @@
   <!-- JavaScript Files -->
   <script src="src/js/app.js" type="module"></script>
   <script src="src/js/components/navbar.js" defer></script>
+  <script src="src/js/components/modal.js" defer></script>
 </body>
 </html>
