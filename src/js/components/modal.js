@@ -9,6 +9,11 @@ document.addEventListener('DOMContentLoaded', function() {
   const openAboutMeButton = document.getElementById('openAboutMeModal');
   const closeAboutMeButton = document.getElementById('closeAboutMeModal');
 
+  // Desjardins Design System Modal
+  const desjardinsModal = document.getElementById('desjardinsModal');
+  const openDesjardinsButton = document.querySelector('.dropdown-menu a[href="case-study-2.html"]');
+  const closeDesjardinsButton = document.getElementById('closeDesjardinsModal');
+
   // Career Timeline Modal Handlers
   if (openTimelineButton) {
     openTimelineButton.addEventListener('click', function(e) {
@@ -61,6 +66,38 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  // Desjardins Modal Handlers
+  if (openDesjardinsButton) {
+    openDesjardinsButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation(); // Prevent dropdown from closing
+
+      // Close any open dropdowns
+      const dropdowns = document.querySelectorAll('.dropdown-menu');
+      dropdowns.forEach(dropdown => dropdown.classList.remove('show'));
+
+      desjardinsModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  }
+
+  if (closeDesjardinsButton) {
+    closeDesjardinsButton.addEventListener('click', function() {
+      desjardinsModal.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+  }
+
+  // Close Desjardins modal when clicking outside content
+  if (desjardinsModal) {
+    desjardinsModal.addEventListener('click', function(e) {
+      if (e.target === desjardinsModal) {
+        desjardinsModal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  }
+
   // Close modals with Escape key
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
@@ -70,6 +107,10 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       if (aboutMeModal && aboutMeModal.classList.contains('active')) {
         aboutMeModal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+      if (desjardinsModal && desjardinsModal.classList.contains('active')) {
+        desjardinsModal.classList.remove('active');
         document.body.style.overflow = '';
       }
     }
