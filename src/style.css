@@ -92,13 +92,20 @@
   font-family: "Uncial Antiqua", serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 50px;
+  font-size: 4.5rem;
   text-align: center;
-  max-width: 540px;
+  max-width: 900px;
   z-index: 1;
-  margin-top: 40px;
+  margin-top: 100px;
 }
 
+/* For smaller screens */
+@media screen and (max-width: 576px) {
+  .home-title {
+    font-size: 2.5rem;
+    margin-top: 40px;
+  }
+}
 .highlight-pink {
   background-color: #FFF0FF;
 }
@@ -260,6 +267,61 @@ p {
   color: white;
 }
 
+.funky-button {
+  position: relative;
+  font-family: "IBM Plex Sans", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
+  width: 100px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+  border-bottom: 4px solid black;
+  border-left: 4px solid black;
+  background-image: linear-gradient(45deg, #FFF0FF 0%, #E6DCFF 14.29%, #D7FFFF 28.57%, #E1FFF0 42.86%, #FFFFBE 57.14%, #FFE6BE 71.43%, #FFC8C8 85.71%, #FFF0FF 100%);
+  background-size: 100% 100%;
+  animation: barberpole 8s linear infinite;
+}
+.funky-button a {
+  text-decoration: none;
+  color: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 30px;
+  gap: 4px;
+  flex-shrink: 0;
+  border-radius: 4px;
+}
+.funky-button a:hover {
+  background: #FFFFBE;
+}
+.funky-button a.active {
+  background-color: black;
+  color: white;
+  font-weight: medium;
+}
+
+@keyframes barberpole {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
 /* Navbar styling */
 .navbar {
   display: flex;
