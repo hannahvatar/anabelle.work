@@ -1,18 +1,701 @@
-/* Error: Top-level selectors may not contain the parent selector "&".
- *    ,
- * 17 |   &.active {
- *    |   ^
- *    '
- *   src/scss/components/_modal.scss 17:3  @use
- *   src/scss/style.scss 7:1               root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: 'Error: Top-level selectors may not contain the parent selector "&".\a    \2577 \a 17 \2502    &.active {\a    \2502    ^\a    \2575 \a   src/scss/components/_modal.scss 17:3  @use\a   src/scss/style.scss 7:1               root stylesheet';
+.uncial-antiqua-regular {
+  font-family: "Uncial Antiqua", serif;
+  font-weight: 400;
+  font-style: normal;
 }
+
+.ibm-plex-sans-thin {
+  font-family: "IBM Plex Sans", serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.ibm-plex-sans-extralight {
+  font-family: "IBM Plex Sans", serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.ibm-plex-sans-light {
+  font-family: "IBM Plex Sans", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.ibm-plex-sans-regular {
+  font-family: "IBM Plex Sans", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.ibm-plex-sans-medium {
+  font-family: "IBM Plex Sans", serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.ibm-plex-sans-semibold {
+  font-family: "IBM Plex Sans", serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.ibm-plex-sans-bold {
+  font-family: "IBM Plex Sans", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.ibm-plex-sans-thin-italic {
+  font-family: "IBM Plex Sans", serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.ibm-plex-sans-extralight-italic {
+  font-family: "IBM Plex Sans", serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.ibm-plex-sans-light-italic {
+  font-family: "IBM Plex Sans", serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.ibm-plex-sans-regular-italic {
+  font-family: "IBM Plex Sans", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.ibm-plex-sans-medium-italic {
+  font-family: "IBM Plex Sans", serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.ibm-plex-sans-semibold-italic {
+  font-family: "IBM Plex Sans", serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.ibm-plex-sans-bold-italic {
+  font-family: "IBM Plex Sans", serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.home-title {
+  font-family: "Uncial Antiqua", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 4.5rem;
+  text-align: center;
+  max-width: 900px;
+  z-index: 1;
+  margin-top: 100px;
+}
+
+/* For smaller screens */
+@media screen and (max-width: 576px) {
+  .home-title {
+    font-size: 2.5rem;
+    margin-top: 40px;
+  }
+}
+.highlight-pink {
+  background-color: #FFF0FF;
+}
+
+.highlight-violet {
+  background-color: #E6DCFF;
+}
+
+.highlight-blue {
+  background-color: #D7FFFF;
+}
+
+.highlight-green {
+  background-color: #E1FFF0;
+}
+
+.highlight-yellow {
+  background-color: #FFFFBE;
+}
+
+.highlight-orange {
+  background-color: #FFE6BE;
+}
+
+.highlight-red {
+  background-color: #FFC8C8;
+}
+
+h2 {
+  margin-top: 16%;
+  margin-bottom: 4rem !important;
+}
+
+h4 {
+  margin-bottom: 0 !important;
+}
+
+p {
+  margin-top: 1%;
+  margin-bottom: 0 !important;
+}
+
+/* Navigation Button Styles */
+.nav-button {
+  font-family: "IBM Plex Sans", serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  width: 100px;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+  border-bottom: 4px solid black;
+  border-left: 4px solid black;
+  background: #FFF;
+  position: relative; /* Ensure dropdown menu is positioned relative to button */
+  /* Hover state for the nav button itself */
+  /* Anchor Tag Inside Buttons */
+}
+.nav-button:hover .dropdown-menu {
+  display: block; /* Show the dropdown when hovering over the parent nav button */
+}
+.nav-button a {
+  text-decoration: none;
+  color: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 30px;
+  gap: 4px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  background: #FFF;
+}
+.nav-button a:hover {
+  background: #FFFFBE;
+}
+.nav-button a.active {
+  background-color: black;
+  color: white;
+  font-weight: medium;
+}
+
+/* Dropdown Menu Styles */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  min-width: 160px;
+  z-index: 1;
+  border-radius: 8px;
+  padding: 0px;
+  overflow: hidden;
+}
+
+/* Dropdown Link Styling */
+.dropdown-menu a {
+  color: black;
+  text-decoration: none;
+  text-align: left;
+  display: block;
+  width: 100%;
+  padding: 8px 16px;
+  height: 30px;
+  transition: all 0.3s ease;
+  border-radius: 0px;
+}
+.dropdown-menu a:hover {
+  background-color: #00007D;
+  color: white;
+  border-radius: 0px;
+}
+
+/* First and last links to respect dropdown menu's border-radius */
+.dropdown-menu a:first-child {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.dropdown-menu a:last-child {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+/* Navigation Link Styling */
+.nav-link {
+  font-family: "IBM Plex Sans", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
+  text-decoration: underline;
+  display: flex;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+.nav-link:hover {
+  background: #FFFFBE;
+}
+.nav-link:active {
+  background: black;
+  color: white;
+}
+
+.funky-button {
+  position: relative;
+  font-family: "IBM Plex Sans", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
+  width: 100px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+  border-bottom: 4px solid black;
+  border-left: 4px solid black;
+  background-image: linear-gradient(45deg, #FFF0FF 0%, #E6DCFF 14.29%, #D7FFFF 28.57%, #E1FFF0 42.86%, #FFFFBE 57.14%, #FFE6BE 71.43%, #FFC8C8 85.71%, #FFF0FF 100%);
+  background-size: 100% 100%;
+  animation: barberpole 8s linear infinite;
+}
+.funky-button a {
+  text-decoration: none;
+  color: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 30px;
+  gap: 4px;
+  flex-shrink: 0;
+  border-radius: 4px;
+}
+.funky-button a:hover {
+  background: #FFFFBE;
+}
+.funky-button a.active {
+  background-color: black;
+  color: white;
+  font-weight: medium;
+}
+
+@keyframes barberpole {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+/* Navbar styling */
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  row-gap: 12px;
+  width: 100%;
+  height: 100%;
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.nav-button-wrapper {
+  position: relative;
+  width: 104px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-button {
+  font-family: "IBM Plex Sans", serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+  border-bottom: 4px solid black;
+  border-left: 4px solid black;
+  background: transparent;
+  position: relative;
+}
+.nav-button:hover {
+  border-width: 2px;
+  background: transparent;
+}
+.nav-button:hover .dropdown-menu {
+  display: block;
+}
+.nav-button a {
+  text-decoration: none;
+  color: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 30px;
+  gap: 4px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  background: #FFF;
+}
+.nav-button a.active {
+  background-color: black;
+  color: white;
+  font-weight: medium;
+}
+.nav-button a.active:hover {
+  background-color: black;
+  color: white;
+}
+.nav-button a:hover {
+  background: #FFFFBE;
+  color: black;
+}
+
+/* Dropdown Menu Styles */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  width: 180px;
+  z-index: 2;
+  border-radius: 8px;
+  padding: 0px;
+  overflow: hidden;
+}
+.dropdown-menu a {
+  color: black;
+  text-decoration: none;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: 40px;
+  padding: 0 16px;
+  transition: all 0.3s ease;
+  border-radius: 0px;
+}
+.dropdown-menu a:hover {
+  background-color: #00007D;
+  color: white;
+  border-radius: 0px;
+}
+.dropdown-menu a:first-child {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.dropdown-menu a:last-child {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+/* Navigation Link Styling */
+.nav-link {
+  font-family: "IBM Plex Sans", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
+  text-decoration: underline;
+  display: flex;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+.nav-link:hover {
+  background: #FFFFBE;
+}
+.nav-link:active {
+  background: black;
+  color: white;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  max-width: 1200px;
+  margin: 0px auto; /* Centered horizontally */
+  padding: 8px;
+}
+
+.container-fluid {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the content inside the container */
+  width: 100%;
+  max-width: 1200px; /* Restrict the container's maximum width */
+  margin: 0 auto; /* Center the container horizontally */
+  gap: 32px;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(200, 220, 225, 0.98);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+  overflow: auto;
+}
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  position: relative;
+  width: 80%;
+  max-width: 540px;
+  max-height: 90vh;
+  height: auto;
+  overflow-y: auto;
+  background: white;
+  padding: 2rem;
+  margin: 2vh;
+  border-radius: 12px;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.modal-content::-webkit-scrollbar {
+  display: none;
+}
+.modal-content h2 {
+  font-family: "IBM Plex Sans", serif;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 20;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+  border-bottom: 4px solid black;
+  border-left: 4px solid black;
+  background: white;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+.close-button:hover {
+  border-width: 2px;
+  background: #FFFFBE;
+}
+
+.timeline {
+  position: relative;
+  padding: 20px 0;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 48px;
+  top: 24px;
+  bottom: 40px;
+  width: 2px;
+  background: black;
+}
+
+.timeline-item {
+  display: flex;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.timeline-date {
+  display: flex;
+  justify-content: flex-start;
+  width: 60px;
+  padding-right: 4px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.timeline-info {
+  flex: 1;
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+  border-bottom: 4px solid black;
+  border-left: 4px solid black;
+}
+.timeline-info h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+.timeline-info p {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.card-icon {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@keyframes clouds-loop-clouds_2 {
+  to {
+    background-position: -1000px 0;
+  }
+}
+.clouds-clouds_2 {
+  background-image: url(https://s.cdpn.io/15514/clouds_2.png);
+  animation: clouds-loop-clouds_2 30s infinite linear;
+}
+
+@keyframes clouds-loop-clouds_1 {
+  to {
+    background-position: -1000px 0;
+  }
+}
+.clouds-clouds_1 {
+  background-image: url(https://res.cloudinary.com/diwuyv3c8/image/upload/v1734971669/cloud_01_hcsl6u.png);
+  animation: clouds-loop-clouds_1 25s infinite linear;
+}
+
+@keyframes clouds-loop-clouds_3 {
+  to {
+    background-position: -1579px 0;
+  }
+}
+.clouds-clouds_3 {
+  background-image: url(https://s.cdpn.io/15514/clouds_3.png);
+  animation: clouds-loop-clouds_3 27s infinite linear;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  min-height: 100vh;
+  width: 100%;
+}
+
+body {
+  font-family: "IBM Plex Sans", sans-serif;
+  background: #C8DCE1;
+  position: relative;
+}
+body.home {
+  background: linear-gradient(#C8DCE1, #64A5D7);
+}
+body.home .clouds {
+  display: block;
+}
+
+.clouds {
+  display: none;
+  opacity: 0.4;
+  pointer-events: none;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  z-index: -1;
+}
+.clouds-clouds_1, .clouds-clouds_2, .clouds-clouds_3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 500px;
+  background-repeat: repeat-x;
+}
+
+h2 {
+  margin-top: 16%;
+  margin-bottom: 4rem !important;
+}
+
+/*# sourceMappingURL=style.css.map */

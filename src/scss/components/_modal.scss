@@ -12,37 +12,35 @@
   justify-content: center;
   padding: 40px 0;
   overflow: auto;
-}
 
   &.active {
     opacity: 1;
     visibility: visible;
   }
+}
 
 
 .modal-content {
-  position: relative; /* Ensure sticky positioning works correctly */
+  position: relative; // Remove duplicate
   width: 80%;
   max-width: 540px;
-  max-height: 90vh; // Maximum 90% of viewport height
-  height: auto; // Allow content to determine height
-  overflow-y: auto; // Enable internal scrolling
+  max-height: 90vh;
+  height: auto;
+  overflow-y: auto;
   background: white;
   padding: 2rem;
   margin: 2vh;
   border-radius: 12px;
   border: 2px solid black;
-  position: relative;
   display: flex;
   flex-direction: column;
-  -webkit-overflow-scrolling: touch; // Smooth scrolling on iOS
+  -webkit-overflow-scrolling: touch;
 
-  // Remove scrollbar styles for mobile-friendliness
-  scrollbar-width: none; // Firefox
-  -ms-overflow-style: none; // Internet Explorer 10+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 
   &::-webkit-scrollbar {
-    display: none; // WebKit browsers
+    display: none;
   }
 
   h2 {
@@ -56,7 +54,7 @@
   position: absolute;
   top: 20px;
   right: 20px;
-  z-index: 20; /* High z-index to keep it on top */
+  z-index: 20;
   width: 40px;
   height: 40px;
   border-radius: 8px;
@@ -71,12 +69,12 @@
   align-items: center;
   justify-content: center;
   transition: all 0.2s ease;
-}
 
   &:hover {
     border-width: 2px;
     background: #FFFFBE;
   }
+}
 
 
 // Timeline specific styles
