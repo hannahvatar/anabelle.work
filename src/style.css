@@ -99,8 +99,32 @@
   margin-top: 40px;
 }
 
-mark {
+.highlight-pink {
+  background-color: #FFF0FF;
+}
+
+.highlight-violet {
+  background-color: #E6DCFF;
+}
+
+.highlight-blue {
+  background-color: #D7FFFF;
+}
+
+.highlight-green {
+  background-color: #E1FFF0;
+}
+
+.highlight-yellow {
   background-color: #FFFFBE;
+}
+
+.highlight-orange {
+  background-color: #FFE6BE;
+}
+
+.highlight-red {
+  background-color: #FFC8C8;
 }
 
 h2 {
@@ -517,7 +541,7 @@ p {
   position: absolute;
   left: 48px;
   top: 24px;
-  bottom: 0;
+  bottom: 40px;
   width: 2px;
   background: black;
 }
