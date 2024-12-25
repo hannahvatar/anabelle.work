@@ -116,3 +116,50 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 });
+
+// Grrunch App Modal
+const grrunchModal = document.getElementById('grrunchModal');
+const openGrrunchButton = document.querySelector('.dropdown-menu a[href="case-study-1.html"]'); // Adjust selector as needed
+const closeGrrunchButton = document.getElementById('closeGrrunchModal');
+
+if (openGrrunchButton) {
+  openGrrunchButton.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation(); // Prevent dropdown from closing
+
+    // Close any open dropdowns
+    const dropdowns = document.querySelectorAll('.dropdown-menu');
+    dropdowns.forEach(dropdown => dropdown.classList.remove('show'));
+
+    grrunchModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  });
+}
+
+if (closeGrrunchButton) {
+  closeGrrunchButton.addEventListener('click', function() {
+    grrunchModal.classList.remove('active');
+    document.body.style.overflow = '';
+  });
+}
+
+// Close Grrunch modal when clicking outside content
+if (grrunchModal) {
+  grrunchModal.addEventListener('click', function(e) {
+    if (e.target === grrunchModal) {
+      grrunchModal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  });
+}
+
+// Update the Escape key handler to include the new modal
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    // ... existing modal checks ...
+    if (grrunchModal && grrunchModal.classList.contains('active')) {
+      grrunchModal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+  }
+});
