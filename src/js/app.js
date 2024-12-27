@@ -27,6 +27,8 @@ const updatePageStyles = () => {
   });
 };
 
+
+
 // Initial load
 updatePageStyles();
 

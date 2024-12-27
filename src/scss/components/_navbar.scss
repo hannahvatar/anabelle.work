@@ -1,7 +1,13 @@
 
 
 /* Navbar styling */
+
+.nav-container {
+  position: relative;
+  width: 100%;
+}
 .navbar {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
