@@ -1,39 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anabelle's Work</title>
-  <link rel="stylesheet" href="src/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap" rel="stylesheet">
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Anabelle's Work</title>
+ <link rel="stylesheet" href="src/style.css">
+ <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700&display=swap" rel="stylesheet">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap" rel="stylesheet">
 
-  <script src="https://unpkg.com/feather-icons"></script>
+ <script src="https://unpkg.com/feather-icons"></script>
 </head>
 <body class="home">
-  <!-- Navigation Bar -->
-  <div class="container-fluid">
-    <!--<div class="nav-link">Home</div>-->
-    <div class="navbar">
+ <!-- Navigation Bar -->
+ <div class="container-fluid">
+   <div class="navbar">
+     <div class="nav-button-wrapper">
+       <div class="nav-button" id="about-link">
+         <a href="#" id="openAboutMeModal">🦄 About Me</a>
+       </div>
+     </div>
 
-      <div class="nav-button-wrapper">
-        <div class="nav-button" id="about-link">
-          <a href="#" id="openAboutMeModal">🦄 About Me</a>
-        </div>
-      </div>
+     <div class="nav-button-wrapper">
+       <div class="funky-button" id="career-link">
+         <a href="#" id="openTimelineModal">Career Timeline</a>
+       </div>
+     </div>
 
-      <div class="nav-button-wrapper">
-      <div class="funky-button" id="career-link">
-        <a href="#" id="openTimelineModal">Career Timeline</a>
-      </div>
-      </div>
-
-      <div class="nav-button-wrapper">
+     <div class="nav-button-wrapper">
       <div class="nav-button" id="case-studies-link">
-        <a href="#">Case Studies</a>
-        <!-- Dropdown Menu -->
+        <a href="#" class="toggle-button">Case Studies</a>
         <div class="dropdown-menu">
           <a href="case-study-1.html">Grrunch app</a>
           <a href="case-study-2.html">Desjardins Design System</a>
@@ -42,49 +39,44 @@
           <a href="case-study-5.html">More...</a>
         </div>
       </div>
-      </div>
+    </div>
 
-      <div class="nav-button-wrapper">
-      <div class="nav-button" id="resume-link">
-        <a href="resume.html">Resume
-          <i data-feather="download"></i>
-        </a>
 
-      </div>
+     <div class="nav-button-wrapper">
+       <div class="nav-button" id="resume-link">
+         <a href="resume.html">Resume
+           <i data-feather="download"></i>
+         </a>
+       </div>
      </div>
 
      <div class="nav-button-wrapper">
-      <div class="nav-button" id="linkedin-link">
-        <a href="https://www.linkedin.com/in/anabelledubois/" target="_blank">LinkedIn
-          <i data-feather="external-link"></i>
-        </a>
-      </div>
-    </div>
+       <div class="nav-button" id="linkedin-link">
+         <a href="https://www.linkedin.com/in/anabelledubois/" target="_blank">LinkedIn
+           <i data-feather="external-link"></i>
+         </a>
+       </div>
+     </div>
 
-    <div class="nav-button-wrapper">
-      <div class="nav-button" id="call-link">
-        <a href="tel:+15145820109">Call Me
-          <i data-feather="phone"></i>
-        </a>
-      </div>
-    </div>
+     <div class="nav-button-wrapper">
+       <div class="nav-button" id="call-link">
+         <a href="tel:+15145820109">Call Me
+           <i data-feather="phone"></i>
+         </a>
+       </div>
+     </div>
 
-    <div class="nav-button-wrapper">
-      <div class="nav-button" id="email-link">
-        <a href="mailto:anabelle.dubois@icloud.com?subject=✨Very%20interesting%20portfolio!%20&body=Bonjour%20Anabelle!%0A%0AHow%20are%20you?%20I%20stumbled%20upon%20your%20portfolio%20and%20would%20like%20to%20discuss%20with%20you..." target="_blank">Email Me
-          <i data-feather="mail"></i>
-        </a>
-      </div>
-    </div>
+     <div class="nav-button-wrapper">
+       <div class="nav-button" id="email-link">
+         <a href="mailto:anabelle.dubois@icloud.com?subject=✨Very%20interesting%20portfolio!%20&body=Bonjour%20Anabelle!%0A%0AHow%20are%20you?%20I%20stumbled%20upon%20your%20portfolio%20and%20would%20like%20to%20discuss%20with%20you..." target="_blank">Email Me
+           <i data-feather="mail"></i>
+         </a>
+       </div>
+     </div>
+   </div>
+ </div>
 
-
-
-
-
-    </div>
-  </div>
-
-  <!-- End Navigation Bar -->
+ <!-- End Navigation Bar -->
 
    <!-- Main content -->
     <div class="container-fluid">
@@ -353,6 +345,7 @@
   <script src="src/js/app.js" type="module"></script>
   <script src="src/js/components/navbar.js" defer></script>
   <script src="src/js/components/modal.js" defer></script>
+  <script src="src/js/components/dropdown.js" defer></script>
   <script>feather.replace();</script>
 </body>
 </html>
