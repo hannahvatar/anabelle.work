@@ -1,53 +1,40 @@
-/* Dropdown Button Styles */
-.dropbtn {
-  background-color: #04AA6D;
-  color: white;
-  padding: 12px 16px;
-  font-size: 14px;
-  font-family: "IBM Plex Sans", serif;
-  border: none;
-  cursor: pointer;
-  border-radius: 4px;
-}
+.dropdown-menu {
 
-.dropbtn:hover,
-.dropbtn:focus {
-  background-color: #3e8e41;
-}
-
-/* Dropdown Container */
-.dropdown {
-  position: relative;
-  float: right;
-}
-
-/* Dropdown Content */
-.dropdown-content {
-  display: none;
   position: absolute;
+  right: 0; /* Align to the right of .nav-button-wrapper */
+  top: 100%; /* Position below the button */
+  width: 200px; /* Or whatever width you need */
   background-color: #f9f9f9;
-  min-width: 160px;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-  right: 0;
-  z-index: 1;
+  z-index: 2;
   border-radius: 4px;
   overflow: hidden;
 }
 
-.dropdown-content a {
-  color: black;
-  padding: 10px 16px;
-  text-decoration: none;
-  display: block;
-  font-size: 12px;
-  font-family: "IBM Plex Sans", serif;
-  transition: background-color 0.3s ease;
-}
-
-.dropdown-content a:hover {
-  background-color: #ddd;
-}
-
+/* Show dropdown menu */
 .show {
   display: block;
+}
+
+/* Add transition for smooth color change */
+.active {
+  color: #04AA6D; /* Example active color */
+  transition: color 0.3s ease;
+}
+
+/* Align menu items to the left */
+.dropdown-menu a {
+  text-align: left; /* Align text to the left */
+  padding: 10px 16px; /* Adjust padding for spacing */
+  display: block; /* Ensure full width for clickable area */
+  color: black;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  font-family: "IBM Plex Sans", serif; /* Consistent font */
+  font-size: 14px; /* Consistent font size */
+}
+
+/* Add hover effect for better UX */
+.dropdown-menu a:hover {
+  background-color: #ddd;
 }

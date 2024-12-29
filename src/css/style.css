@@ -149,7 +149,13 @@ p {
 }
 
 /* Navigation Button Styles */
+.nav-button-wrapper {
+  position: static;
+}
+
 .nav-button {
+  position: relative;
+  width: fit-content;
   font-family: "IBM Plex Sans", serif;
   font-weight: 300;
   font-style: normal;
@@ -199,50 +205,6 @@ p {
   background-color: black;
   color: white;
   font-weight: medium;
-}
-
-/* Dropdown Menu Styles */
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #f9f9f9;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-  min-width: 160px;
-  z-index: 1;
-  border-radius: 8px;
-  padding: 0px;
-  overflow: hidden;
-}
-
-/* Dropdown Link Styling */
-.dropdown-menu a {
-  color: black;
-  text-decoration: none;
-  text-align: left;
-  display: block;
-  width: 100%;
-  padding: 8px 16px;
-  height: 30px;
-  transition: all 0.3s ease;
-  border-radius: 0px;
-}
-.dropdown-menu a:hover {
-  background-color: #00007D;
-  color: white;
-  border-radius: 0px;
-}
-
-/* First and last links to respect dropdown menu's border-radius */
-.dropdown-menu a:first-child {
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-}
-
-.dropdown-menu a:last-child {
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
 }
 
 /* Navigation Link Styling */
@@ -323,7 +285,13 @@ p {
   }
 }
 /* Navbar styling */
+.nav-container {
+  position: relative;
+  width: 100%;
+}
+
 .navbar {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -347,9 +315,7 @@ p {
 }
 
 .nav-button-wrapper {
-  position: relative;
   width: 104px;
-  height: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -363,7 +329,6 @@ p {
   display: flex;
   flex-direction: column;
   width: 100px;
-  height: 30px;
   justify-content: center;
   align-items: center;
   gap: 4px;
@@ -374,14 +339,10 @@ p {
   border-bottom: 4px solid black;
   border-left: 4px solid black;
   background: transparent;
-  position: relative;
 }
 .nav-button:hover {
   border-width: 2px;
   background: transparent;
-}
-.nav-button:hover .dropdown-menu {
-  display: block;
 }
 .nav-button a {
   text-decoration: none;
@@ -412,47 +373,6 @@ p {
 .nav-button a:hover {
   background: #FFFFBE;
   color: black;
-}
-
-/* Dropdown Menu Styles */
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #f9f9f9;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-  width: 180px;
-  z-index: 2;
-  border-radius: 8px;
-  padding: 0px;
-  overflow: hidden;
-}
-.dropdown-menu a {
-  color: black;
-  text-decoration: none;
-  text-align: left;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  width: 100%;
-  height: 40px;
-  padding: 0 16px;
-  transition: all 0.3s ease;
-  border-radius: 0px;
-}
-.dropdown-menu a:hover {
-  background-color: #00007D;
-  color: white;
-  border-radius: 0px;
-}
-.dropdown-menu a:first-child {
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-}
-.dropdown-menu a:last-child {
-  border-bottom-left-radius: 8px;
-  border-bottom-right-radius: 8px;
 }
 
 /* Navigation Link Styling */
@@ -620,6 +540,46 @@ p {
 .card-icon {
   display: flex;
   justify-content: flex-end;
+}
+
+.dropdown-menu {
+  position: absolute;
+  right: 0; /* Align to the right of .nav-button-wrapper */
+  top: 100%; /* Position below the button */
+  width: 200px; /* Or whatever width you need */
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* Show dropdown menu */
+.show {
+  display: block;
+}
+
+/* Add transition for smooth color change */
+.active {
+  color: #04AA6D; /* Example active color */
+  transition: color 0.3s ease;
+}
+
+/* Align menu items to the left */
+.dropdown-menu a {
+  text-align: left; /* Align text to the left */
+  padding: 10px 16px; /* Adjust padding for spacing */
+  display: block; /* Ensure full width for clickable area */
+  color: black;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  font-family: "IBM Plex Sans", serif; /* Consistent font */
+  font-size: 14px; /* Consistent font size */
+}
+
+/* Add hover effect for better UX */
+.dropdown-menu a:hover {
+  background-color: #ddd;
 }
 
 @keyframes clouds-loop-clouds_2 {
