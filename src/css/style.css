@@ -157,7 +157,7 @@ p {
   position: relative;
   width: fit-content;
   font-family: "IBM Plex Sans", serif;
-  font-weight: 300;
+  font-weight: 500 !important;
   font-style: normal;
   font-size: 12px;
   display: flex;
@@ -232,7 +232,7 @@ p {
 .funky-button {
   position: relative;
   font-family: "IBM Plex Sans", serif;
-  font-weight: 400;
+  font-weight: 500 !important;
   font-style: normal;
   font-size: 12px;
   width: 100px;
@@ -362,8 +362,8 @@ p {
   background: #FFF;
 }
 .nav-button a.active {
-  background-color: black;
-  color: white;
+  background-color: #FFFFBE;
+  color: black;
   font-weight: medium;
 }
 .nav-button a.active:hover {
@@ -547,11 +547,13 @@ p {
   right: 0; /* Align to the right of .nav-button-wrapper */
   top: 100%; /* Position below the button */
   width: 200px; /* Or whatever width you need */
-  background-color: #f9f9f9;
+  background-color: white;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 2;
   border-radius: 4px;
   overflow: hidden;
+  font-family: "IBM Plex Sans", serif; /* Consistent font */
+  font-size: 14px; /* Consistent font size */
 }
 
 /* Show dropdown menu */
@@ -561,8 +563,10 @@ p {
 
 /* Add transition for smooth color change */
 .active {
-  color: #04AA6D; /* Example active color */
+  color: black; /* Example active color */
   transition: color 0.3s ease;
+  font-family: "IBM Plex Sans", serif; /* Consistent font */
+  font-size: 14px; /* Consistent font size */
 }
 
 /* Align menu items to the left */
@@ -579,7 +583,8 @@ p {
 
 /* Add hover effect for better UX */
 .dropdown-menu a:hover {
-  background-color: #ddd;
+  background-color: #00007D;
+  color: white;
 }
 
 @keyframes clouds-loop-clouds_2 {
@@ -655,7 +660,15 @@ body.home .clouds {
 
 h2 {
   margin-top: 16%;
-  margin-bottom: 4rem !important;
+  margin-bottom: 1rem !important;
+}
+
+p {
+  font-family: "IBM Plex Sans", serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.25rem;
+  font-size: 14px;
 }
 
 /*# sourceMappingURL=style.css.map */
