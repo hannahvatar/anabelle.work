@@ -3,7 +3,7 @@
   right: 0;
   top: 100%;
   width: 200px;
-  background-color: white;
+  background-color: white;  // Explicitly white
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 2;
   border-radius: 4px;
@@ -14,10 +14,12 @@
 
 .show {
   display: block;
+  background-color: white;  // Add this to ensure white background when shown
 }
 
 .active {
   color: black;
+  background-color: white;  // Add this to ensure white background
   transition: color 0.3s ease;
   font-family: "IBM Plex Sans", serif;
   font-size: 14px;
@@ -28,6 +30,7 @@
   padding: 10px 16px;
   display: block;
   color: black;
+  background-color: white;  // Add this to ensure white background
   text-decoration: none;
   transition: background-color 0.3s ease;
   font-family: "IBM Plex Sans", serif;
@@ -36,9 +39,8 @@
   // Add active/focus states for touch devices
   &:hover,
   &:active,
-  &:focus
+  &:focus,  // Added missing comma here
   &:visited {
-
     background-color: #00007D;
     color: white;
   }
