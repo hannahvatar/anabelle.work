@@ -36,7 +36,9 @@
   // Add active/focus states for touch devices
   &:hover,
   &:active,
-  &:focus {
+  &:focus
+  &:visited {
+
     background-color: #00007D;
     color: white;
   }
