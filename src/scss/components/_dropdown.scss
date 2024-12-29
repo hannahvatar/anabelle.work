@@ -1,46 +1,51 @@
-
-
 .dropdown-menu {
   position: absolute;
-  right: 0; /* Align to the right of .nav-button-wrapper */
-  top: 100%; /* Position below the button */
-  width: 200px; /* Or whatever width you need */
+  right: 0;
+  top: 100%;
+  width: 200px;
   background-color: white;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 2;
   border-radius: 4px;
   overflow: hidden;
-  font-family: "IBM Plex Sans", serif; /* Consistent font */
-  font-size: 14px; /* Consistent font size */
+  font-family: "IBM Plex Sans", serif;
+  font-size: 14px;
 }
 
-/* Show dropdown menu */
 .show {
   display: block;
 }
 
-/* Add transition for smooth color change */
 .active {
-  color: black; /* Example active color */
+  color: black;
   transition: color 0.3s ease;
-  font-family: "IBM Plex Sans", serif; /* Consistent font */
-  font-size: 14px; /* Consistent font size */
+  font-family: "IBM Plex Sans", serif;
+  font-size: 14px;
 }
 
-/* Align menu items to the left */
 .dropdown-menu a {
-  text-align: left; /* Align text to the left */
-  padding: 10px 16px; /* Adjust padding for spacing */
-  display: block; /* Ensure full width for clickable area */
+  text-align: left;
+  padding: 10px 16px;
+  display: block;
   color: black;
   text-decoration: none;
   transition: background-color 0.3s ease;
-  font-family: "IBM Plex Sans", serif; /* Consistent font */
-  font-size: 14px; /* Consistent font size */
-}
+  font-family: "IBM Plex Sans", serif;
+  font-size: 14px;
 
-/* Add hover effect for better UX */
-.dropdown-menu a:hover {
-  background-color: #00007D;
-  color: white;
+  // Add active/focus states for touch devices
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: #00007D;
+    color: white;
+  }
+
+  // Media query for touch devices
+  @media (hover: none) {
+    &:active {
+      background-color: #00007D;
+      color: white;
+    }
+  }
 }
