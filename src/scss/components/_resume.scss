@@ -61,19 +61,32 @@
 /* Close button styles */
 .close-button {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  background-color: transparent;
-  border: none;
+  top: 20px;
+  right: 20px;
+  z-index: 20;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+  border-bottom: 4px solid black;
+  border-left: 4px solid black;
+  background: white;
   font-size: 24px;
-  color: #333;
   cursor: pointer;
-  z-index: 10100; /* Ensure the close button is above the modal */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  color: black;
+
+  &:hover {
+    border-width: 2px;
+    background: #FFFFBE;
+  }
 }
 
-.close-button:hover {
-  color: #e74c3c;
-}
+
 
 /* Ensure the navbar stays on top */
 .navbar {
