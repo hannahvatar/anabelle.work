@@ -47,23 +47,24 @@
 
 
 
-   <div class="resume-container">
-    <button id="previewButton" class="preview-button">Resume
-      <i data-feather="download"></i>
-    </button>
+     <div class="resume-container">
+      <button id="previewButton" class="preview-button">Resume
+        <i data-feather="download"></i>
+      </button>
 
-    <div id="resumePreview" class="resume-preview">
-      <!-- Close Button -->
-      <button class="close-button" id="closePreviewButton">&times;</button>
+      <div id="resumePreview" class="resume-preview">
+        <!-- Close Button -->
+        <button class="close-button" id="closePreviewButton">&times;</button>
 
-      <embed id="pdfViewer" src="your-resume.pdf" width="100%" height="500px" type="application/pdf">
-
-      <div class="resume-actions">
-        <button id="downloadButton" class="action-button">Download</button>
-        <button id="printButton" class="action-button">Print</button>
-        <button id="emailButton" class="action-button">Email</button>
+        <embed id="pdfViewer" src="src/images/adubois-resume.pdf" width="100%" height="500px" type="application/pdf">
+ <!-- Commenting out the action buttons since PDF viewer has native controls
+        <div class="resume-actions">
+          <button id="downloadButton" class="action-button" onclick="window.open('src/images/adubois-resume.pdf')">Download</button>
+          <button id="printButton" class="action-button" onclick="window.print()">Print</button>
+          <button id="emailButton" class="action-button">Email</button>
+        </div>
+          -->
       </div>
-    </div>
   </div>
 
 
@@ -102,13 +103,14 @@
 <div class="modal-overlay" id="aboutMeModal">
   <div class="modal-content">
     <button class="close-button" id="closeAboutMeModal">&times;</button>
+      <div class="case-study-content">
     <h2>Bonjour! I'm Anabelle _(ツ)_/¯</h2>
     <div class="about-me-content">
       <div class="about-me-section">
         <p>My journey to becoming the <span class="highlight-pink">Seasoned Product Designer</span> I am today has been like building a product roadmap, with each milestone unlocking a new feature. It started in <span class="highlight-red">Business & Marketing</span>—think of it as the wireframe phase of my career, where I laid the foundation for the <span class="highlight-blue">data-oriented UX designer</span> I am today. Then I discovered <span class="highlight-orange">Graphic Design</span> and began shaping my ideas, one pixel at a time. Naturally, I leveled up to <span class="highlight-yellow">Web & Interactive Design</span>, where I could finally get things movin'. Enter <span class="highlight-green">Figma and Design Systems</span>—which sparked the geek in me and a newfound passion for tokens. As the insatiable dorky learner I am, I recently completed a <span class="highlight-violet">Full Stack Web Development & AI</span> certificate, because why stop at designing when you can code and optimize the whole product experience? Oh, and by the way, I fully coded this site—so I guess you could say I’m the full-stack designer... or a <strong>unicorn</strong>.</p>
       </div>
     </div>
-
+  </div>
       </div>
     </div>
 
@@ -117,6 +119,7 @@
   <div class="modal-overlay" id="timelineModal">
     <div class="modal-content">
       <button class="close-button" id="closeTimelineModal">&times;</button>
+      <div class="case-study-content">
       <h2>Career Timeline</h2>
       <p>Professional eras dedicated to different disciplines have served as building blocks, shaping my current expertise and the seasoned Product Designer I am today.</p>
       <div class="timeline">
@@ -194,7 +197,7 @@
             <p><strong>Company: </strong>BBDO Montreal | <strong>Position:</strong> Project Manager  </p>
             <hr>
             <p><strong>School: </strong>HEC Montreal Business School | <strong> Diploma: </strong>Post Graduate Diploma in Marketing Communication</p>
-
+          </div>
           </div>
         </div>
 
