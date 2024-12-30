@@ -1,0 +1,82 @@
+/* Global Styles */
+.resume-container {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.preview-button {
+  padding: 10px 20px;
+  background-color: #04AA6D;
+  color: white;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Initially hide the resume preview */
+.resume-preview {
+  display: none;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  max-height: 80vh;
+  width: 60%;
+  overflow-y: auto;
+  padding-bottom: 60px; /* Add padding at the bottom to avoid overlap with sticky buttons */
+}
+
+.resume-actions {
+  position: sticky;
+  bottom: 0; /* Stick to the bottom of the modal */
+  background-color: white; /* Ensure background color matches the modal */
+  padding: 10px 0; /* Optional: Adjust padding for spacing */
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  z-index: 10000; /* Ensure buttons are on top of content */
+}
+
+.action-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.action-button:hover {
+  background-color: #0056b3;
+}
+
+/* Close button styles */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+  z-index: 10100; /* Ensure the close button is above the modal */
+}
+
+.close-button:hover {
+  color: #e74c3c;
+}
+
+/* Ensure the navbar stays on top */
+.navbar {
+  position: relative;
+  z-index: 10;
+}

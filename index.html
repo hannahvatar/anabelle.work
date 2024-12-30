@@ -48,22 +48,31 @@
 
 
 
-
      <div class="nav-button-wrapper">
-       <div class="nav-button" id="resume-link">
-         <a href="resume.html">Resume
-           <i data-feather="download"></i>
-         </a>
-       </div>
-     </div>
+      <div class="nav-button" id="resume-link">
+        <a href="#" id="openResumeModal">Resume
+          <i data-feather="download"></i>
+        </a>
+      </div>
+   </div>
 
-     <div class="nav-button-wrapper">
-       <div class="nav-button" id="linkedin-link">
-         <a href="https://www.linkedin.com/in/anabelledubois/" target="_blank">LinkedIn
-           <i data-feather="external-link"></i>
-         </a>
-       </div>
-     </div>
+   <div class="resume-container">
+    <button id="previewButton" class="preview-button">Preview Resume</button>
+
+    <div id="resumePreview" class="resume-preview">
+      <!-- Close Button -->
+      <button class="close-button" id="closePreviewButton">✖</button>
+
+      <embed id="pdfViewer" src="your-resume.pdf" width="100%" height="500px" type="application/pdf">
+
+      <div class="resume-actions">
+        <button id="downloadButton" class="action-button">Download</button>
+        <button id="printButton" class="action-button">Print</button>
+        <button id="emailButton" class="action-button">Email</button>
+      </div>
+    </div>
+  </div>
+
 
      <div class="nav-button-wrapper">
        <div class="nav-button" id="call-link">
@@ -80,8 +89,12 @@
          </a>
        </div>
      </div>
+
+
    </div>
  </div>
+
+
 
  <!-- End Navigation Bar -->
 
@@ -353,6 +366,7 @@
   <script src="src/js/components/navbar.js" defer></script>
   <script src="src/js/components/modal.js" defer></script>
   <script src="src/js/components/dropdown.js" defer></script>
+  <script src="src/js/components/resume.js" defer></script>
   <script>feather.replace();</script>
 </body>
 </html>

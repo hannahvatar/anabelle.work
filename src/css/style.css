@@ -425,11 +425,14 @@ p {
   height: 100%;
   background: rgba(200, 220, 225, 0.98);
   z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 40px 0;
   overflow: auto;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 .modal-overlay.active {
   opacity: 1;
@@ -544,47 +547,131 @@ p {
 
 .dropdown-menu {
   position: absolute;
-  right: 0; /* Align to the right of .nav-button-wrapper */
-  top: 100%; /* Position below the button */
-  width: 200px; /* Or whatever width you need */
-  background-color: white;
+  right: 0;
+  top: 100%;
+  width: 200px;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 2;
   border-radius: 4px;
   overflow: hidden;
-  font-family: "IBM Plex Sans", serif; /* Consistent font */
-  font-size: 14px; /* Consistent font size */
+  font-family: "IBM Plex Sans", serif;
+  font-size: 14px;
 }
 
-/* Show dropdown menu */
 .show {
   display: block;
 }
 
-/* Add transition for smooth color change */
 .active {
-  color: black; /* Example active color */
+  color: black;
   transition: color 0.3s ease;
-  font-family: "IBM Plex Sans", serif; /* Consistent font */
-  font-size: 14px; /* Consistent font size */
+  font-family: "IBM Plex Sans", serif;
+  font-size: 14px;
 }
 
-/* Align menu items to the left */
 .dropdown-menu a {
-  text-align: left; /* Align text to the left */
-  padding: 10px 16px; /* Adjust padding for spacing */
-  display: block; /* Ensure full width for clickable area */
+  text-align: left;
+  padding: 10px 16px;
+  display: block;
   color: black;
+  background-color: white;
   text-decoration: none;
   transition: background-color 0.3s ease;
-  font-family: "IBM Plex Sans", serif; /* Consistent font */
-  font-size: 14px; /* Consistent font size */
+  font-family: "IBM Plex Sans", serif;
+  font-size: 14px;
 }
-
-/* Add hover effect for better UX */
-.dropdown-menu a:hover {
+.dropdown-menu a:hover, .dropdown-menu a:active, .dropdown-menu a:focus {
   background-color: #00007D;
   color: white;
+}
+@media (hover: none) {
+  .dropdown-menu a:active {
+    background-color: #00007D;
+    color: white;
+  }
+}
+
+/* Global Styles */
+.resume-container {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.preview-button {
+  padding: 10px 20px;
+  background-color: #04AA6D;
+  color: white;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Initially hide the resume preview */
+.resume-preview {
+  display: none;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  max-height: 80vh;
+  width: 60%;
+  overflow-y: auto;
+  padding-bottom: 60px; /* Add padding at the bottom to avoid overlap with sticky buttons */
+}
+
+.resume-actions {
+  position: sticky;
+  bottom: 0; /* Stick to the bottom of the modal */
+  background-color: white; /* Ensure background color matches the modal */
+  padding: 10px 0; /* Optional: Adjust padding for spacing */
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  z-index: 10000; /* Ensure buttons are on top of content */
+}
+
+.action-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.action-button:hover {
+  background-color: #0056b3;
+}
+
+/* Close button styles */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+  z-index: 10100; /* Ensure the close button is above the modal */
+}
+
+.close-button:hover {
+  color: #e74c3c;
+}
+
+/* Ensure the navbar stays on top */
+.navbar {
+  position: relative;
+  z-index: 10;
 }
 
 @keyframes clouds-loop-clouds_2 {
