@@ -1,10 +1,11 @@
-/* Global Styles */
+/* Global Resume Container Styles */
 .resume-container {
   text-align: center;
   position: relative;
   z-index: 1;
 }
 
+/* Preview Button Styles */
 .preview-button {
   position: relative;
   width: fit-content;
@@ -15,7 +16,7 @@
   display: flex;
   width: 106px;
   height: 36px;
-  box-sizing: border-box;  /* Include borders in height calculation */
+  box-sizing: border-box;
   justify-content: center;
   align-items: center;
   gap: 4px;
@@ -28,148 +29,95 @@
   background: #FFF;
   cursor: pointer;
   transition: all 0.2s ease;
-  color:black;
-
-  /* Hover state for the button itself */
-  &:hover {
-    background: #FFFFBE;
-    border-width: 2px;  /* Optional: if you want the border to become uniform on hover */
-  }
-
-  /* Anchor Tag Inside Buttons */
-  a {
-    text-decoration: none;
-    color: inherit;
-    font-family: inherit;
-    font-weight: inherit;
-    font-style: inherit;
-    font-size: inherit;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 30px;
-    gap: 4px;
-    flex-shrink: 0;
-    border-radius: 4px;
-
-    &:hover {
-      background: #FFFFBE;
-    }
-
-    &.active {
-      background-color: black;
-      color: white;
-      font-weight: medium;
-    }
-  }
+  color: black;
 }
 
-/* Initially hide the resume preview */
-.resume-preview {
-  display: none;
-  background-color: white;
-  padding: 40px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
-  max-height: 90vh;
-  width: auto;
-  max-width: calc(90vh * 0.773);
-  min-width: 600px;
-  overflow-y: auto;
-  padding-bottom: 80px;
-
-  /* Add media query for mobile */
-  @media screen and (max-width: 768px) {
-    min-width: 90%;  /* Remove fixed min-width */
-    width: 90%;      /* Set width to 90% of viewport */
-    padding: 20px;   /* Reduce padding */
-    max-height: 80vh;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+.preview-button:hover {
+  background: #FFFFBE;
+  border-width: 2px;
 }
 
-
-
-.resume-actions {
-  position: sticky;
-  bottom: 0; /* Stick to the bottom of the modal */
-  background-color: white; /* Ensure background color matches the modal */
-  padding-top: 16px 0; /* Optional: Adjust padding for spacing */
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  z-index: 10000; /* Ensure buttons are on top of content */
-}
-
-.action-button {
+/* Resume Dropdown Styles */
+.resume-dropdown {
   position: relative;
-  width: fit-content;
-  font-family: "IBM Plex Sans", serif;
-  font-weight: 500 !important;
-  font-style: normal;
-  font-size: 12px;
-  display: flex;
-  width: 106px;
-  height: 36px;
-  box-sizing: border-box;  /* Include borders in height calculation */
-  justify-content: center;
-  align-items: center;
-  gap: 4px;
-  flex-shrink: 0;
-  border-radius: 8px;
-  border-top: 2px solid black;
-  border-right: 2px solid black;
-  border-bottom: 4px solid black;
-  border-left: 4px solid black;
-  background: #FFF;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  color:black;
-
-  /* Hover state for the button itself */
-  &:hover {
-    background: #FFFFBE;
-    border-width: 2px;  /* Optional: if you want the border to become uniform on hover */
-  }
-
-  /* Anchor Tag Inside Buttons */
-  a {
-    text-decoration: none;
-    color: inherit;
-    font-family: inherit;
-    font-weight: inherit;
-    font-style: inherit;
-    font-size: inherit;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 30px;
-    gap: 4px;
-    flex-shrink: 0;
-    border-radius: 4px;
-
-    &:hover {
-      background: #FFFFBE;
-    }
-
-    &.active {
-      background-color: black;
-      color: white;
-      font-weight: medium;
-    }
-  }
+  display: inline-block;
 }
 
-/* Close button styles */
+.resume-options-btn {
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 200px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  z-index: 1000;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown-content.show {
+  display: block;
+}
+
+/* Resume Preview Modal */
+.resume-preview-modal {
+  display: none;
+  position: fixed;
+  z-index: 1100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.resume-preview-content {
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 0;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 900px;
+  position: relative;
+  height: 80vh;
+  overflow: hidden;
+}
+
+.resume-preview-content iframe,
+.resume-preview-content object {
+  width: 100%;
+  height: 100%;
+  border: none;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.close-preview-btn,
 .close-button {
   position: absolute;
   top: 20px;
@@ -190,16 +138,42 @@
   align-items: center;
   justify-content: center;
   transition: all 0.2s ease;
+}
 
-  &:hover {
-    border-width: 2px;
-    background: #FFFFBE;
+.close-preview-btn:hover,
+.close-button:hover {
+  border-width: 2px;
+  background: #FFFFBE;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+  .resume-preview-content {
+    width: 95%;
+    margin: 2% auto;
+    height: 90vh;
+  }
+
+  .dropdown-content {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .resume-preview-content iframe,
+  .resume-preview-content object {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    transform: scale(1);
+    transform-origin: top left;
+  }
+
+  .view-online-btn {
+    display: none !important;
   }
 }
 
-
-
-/* Ensure the navbar stays on top */
+/* Navbar Positioning */
 .navbar {
   position: relative;
   z-index: 10;

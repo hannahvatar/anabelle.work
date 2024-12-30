@@ -47,25 +47,41 @@
 
 
 
-     <div class="resume-container">
-      <button id="previewButton" class="preview-button">Resume
-        <i data-feather="download"></i>
+
+<!-- Resume Section -->
+<div class="resume-container">
+  <div class="resume-actions">
+    <!-- Dropdown for resume options -->
+    <div class="resume-dropdown">
+      <button id="resumeOptionsBtn" class="resume-options-btn">
+        Resume Options
+        <i data-feather="chevron-down"></i>
       </button>
-
-      <div id="resumePreview" class="resume-preview">
-        <!-- Close Button -->
-        <button class="close-button" id="closePreviewButton">&times;</button>
-
-        <embed id="pdfViewer" src="src/images/adubois-resume.pdf" width="100%" height="500px" type="application/pdf">
- <!-- Commenting out the action buttons since PDF viewer has native controls
-        <div class="resume-actions">
-          <button id="downloadButton" class="action-button" onclick="window.open('src/images/adubois-resume.pdf')">Download</button>
-          <button id="printButton" class="action-button" onclick="window.print()">Print</button>
-          <button id="emailButton" class="action-button">Email</button>
-        </div>
-          -->
+      <div id="resumeDropdownContent" class="dropdown-content">
+        <a href="src/images/adubois-resume.pdf" target="_blank" download>
+          <i data-feather="download"></i> Download PDF
+        </a>
+        <a href="#" id="viewOnlineBtn" class="view-online-btn">
+          <i data-feather="eye"></i> View Online
+        </a>
+        <a href="#" id="printResumeBtn">
+          <i data-feather="printer"></i> Print Resume
+        </a>
       </div>
+    </div>
   </div>
+
+  <!-- Modal for Online Preview -->
+  <div id="resumePreviewModal" class="resume-preview-modal">
+    <div class="resume-preview-content">
+      <button id="closePreviewBtn" class="close-preview-btn">&times;</button>
+      <object id="resumePreviewObject" data="src/images/adubois-resume.pdf" type="application/pdf" width="100%" height="100%">
+        <p>Your browser doesn't support PDF viewing.
+          <a href="src/images/adubois-resume.pdf" download>Download the PDF</a> instead.</p>
+      </object>
+    </div>
+  </div>
+</div>
 
 
      <div class="nav-button-wrapper">
