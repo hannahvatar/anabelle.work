@@ -6,18 +6,8 @@ document.addEventListener('DOMContentLoaded', function() {
   const resumePreviewModal = document.getElementById('resumePreviewModal');
   const closePreviewBtn = document.getElementById('closePreviewBtn');
 
-  // Toggle dropdown
-  resumeOptionsBtn.addEventListener('click', function(e) {
-    resumeDropdownContent.classList.toggle('show');
-    e.stopPropagation();
-  });
-
-  // Close dropdown when clicking outside
-  window.addEventListener('click', function() {
-    if (resumeDropdownContent.classList.contains('show')) {
-      resumeDropdownContent.classList.remove('show');
-    }
-  });
+  // Remove click event for dropdown toggle
+  // Hover functionality will be handled by CSS
 
   // View Resume Online (only active on desktop)
   viewOnlineBtn.addEventListener('click', function(e) {
@@ -58,6 +48,15 @@ document.addEventListener('DOMContentLoaded', function() {
       printWindow.addEventListener('load', function() {
         printWindow.print();
       });
+    }
+  });
+
+  // Optional: Close dropdown when clicking anywhere else on the page
+  window.addEventListener('click', function(e) {
+    // Check if the click is outside the dropdown
+    if (!resumeDropdownContent.contains(e.target) &&
+        e.target !== resumeOptionsBtn) {
+      resumeDropdownContent.classList.remove('show');
     }
   });
 });

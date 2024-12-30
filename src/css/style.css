@@ -648,16 +648,83 @@ p {
   display: inline-block;
 }
 
+.resume-dropdown:hover .dropdown-content {
+  display: block;
+}
+
 .resume-options-btn {
-  background-color: #f0f0f0;
-  color: #333;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  position: relative;
+  font-family: "IBM Plex Sans", serif;
+  font-weight: 500 !important;
+  font-style: normal;
+  font-size: 12px;
   display: flex;
+  width: 106px;
+  height: 36px;
+  justify-content: center;
   align-items: center;
-  gap: 8px;
+  gap: 4px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+  border-bottom: 4px solid black;
+  border-left: 4px solid black;
+  background: #FFF;
+  position: relative; /* Ensure dropdown menu is positioned relative to button */
+  color: black;
+  cursor: pointer;
+  /* Anchor Tag Inside Buttons */
+}
+.resume-options-btn:hover {
+  background: #FFFFBE;
+}
+.resume-options-btn a {
+  text-decoration: none;
+  color: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 30px;
+  gap: 4px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  background: #FFF;
+}
+.resume-options-btn a:hover {
+  background: #FFFFBE;
+}
+.resume-options-btn a.active {
+  background-color: black;
+  color: white;
+  font-weight: medium;
+}
+
+/* Navigation Link Styling */
+.nav-link {
+  font-family: "IBM Plex Sans", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 12px;
+  text-decoration: underline;
+  display: flex;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+.nav-link:hover {
+  background: #FFFFBE;
+}
+.nav-link:active {
+  background: black;
+  color: white;
 }
 
 .dropdown-content {
@@ -665,23 +732,32 @@ p {
   position: absolute;
   background-color: white;
   min-width: 200px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
   z-index: 1000;
-  border-radius: 5px;
+  border-radius: 8px;
   overflow: hidden;
+  font-family: "IBM Plex Sans", serif;
+  font-size: 14px;
 }
 
 .dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
   display: flex;
-  align-items: center;
-  gap: 10px;
+  align-items: center; /* Vertically centers items */
+  justify-content: flex-start; /* Aligns content to the start horizontally */
+  gap: 10px; /* Adds space between icon and text */
+  padding: 0.5rem 1rem;
+  color: black;
+  background-color: white;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  font-family: "IBM Plex Sans", serif;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .dropdown-content a:hover {
-  background-color: #f1f1f1;
+  background-color: #00007D;
+  color: white;
 }
 
 .dropdown-content.show {
