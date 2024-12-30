@@ -611,20 +611,66 @@ p {
 }
 
 .preview-button {
-  padding: 10px 20px;
-  background-color: #04AA6D;
-  color: white;
-  font-size: 16px;
-  border: none;
+  position: relative;
+  width: fit-content;
+  font-family: "IBM Plex Sans", serif;
+  font-weight: 500 !important;
+  font-style: normal;
+  font-size: 12px;
+  display: flex;
+  width: 106px;
+  height: 36px;
+  box-sizing: border-box; /* Include borders in height calculation */
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+  border-bottom: 4px solid black;
+  border-left: 4px solid black;
+  background: #FFF;
   cursor: pointer;
-  border-radius: 5px;
+  transition: all 0.2s ease;
+  color: black;
+  /* Hover state for the button itself */
+  /* Anchor Tag Inside Buttons */
+}
+.preview-button:hover {
+  background: #FFFFBE;
+  border-width: 2px; /* Optional: if you want the border to become uniform on hover */
+}
+.preview-button a {
+  text-decoration: none;
+  color: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 30px;
+  gap: 4px;
+  flex-shrink: 0;
+  border-radius: 4px;
+}
+.preview-button a:hover {
+  background: #FFFFBE;
+}
+.preview-button a.active {
+  background-color: black;
+  color: white;
+  font-weight: medium;
 }
 
 /* Initially hide the resume preview */
 .resume-preview {
   display: none;
   background-color: white;
-  padding: 20px;
+  padding: 40px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   position: fixed;
@@ -632,17 +678,31 @@ p {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 9999;
-  max-height: 80vh;
-  width: 60%;
+  max-height: 90vh;
+  width: auto;
+  max-width: 69.57vh;
+  min-width: 600px;
   overflow-y: auto;
-  padding-bottom: 60px; /* Add padding at the bottom to avoid overlap with sticky buttons */
+  padding-bottom: 80px;
+  /* Add media query for mobile */
+}
+@media screen and (max-width: 768px) {
+  .resume-preview {
+    min-width: 90%; /* Remove fixed min-width */
+    width: 90%; /* Set width to 90% of viewport */
+    padding: 20px; /* Reduce padding */
+    max-height: 80vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
 .resume-actions {
   position: sticky;
   bottom: 0; /* Stick to the bottom of the modal */
   background-color: white; /* Ensure background color matches the modal */
-  padding: 10px 0; /* Optional: Adjust padding for spacing */
+  padding-top: 16px 0; /* Optional: Adjust padding for spacing */
   display: flex;
   justify-content: center;
   gap: 10px;
@@ -650,17 +710,59 @@ p {
 }
 
 .action-button {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
+  position: relative;
+  width: fit-content;
+  font-family: "IBM Plex Sans", serif;
+  font-weight: 500 !important;
+  font-style: normal;
+  font-size: 12px;
+  display: flex;
+  width: 106px;
+  height: 36px;
+  box-sizing: border-box; /* Include borders in height calculation */
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+  border-bottom: 4px solid black;
+  border-left: 4px solid black;
+  background: #FFF;
   cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s;
+  transition: all 0.2s ease;
+  color: black;
+  /* Hover state for the button itself */
+  /* Anchor Tag Inside Buttons */
 }
-
 .action-button:hover {
-  background-color: #0056b3;
+  background: #FFFFBE;
+  border-width: 2px; /* Optional: if you want the border to become uniform on hover */
+}
+.action-button a {
+  text-decoration: none;
+  color: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 30px;
+  gap: 4px;
+  flex-shrink: 0;
+  border-radius: 4px;
+}
+.action-button a:hover {
+  background: #FFFFBE;
+}
+.action-button a.active {
+  background-color: black;
+  color: white;
+  font-weight: medium;
 }
 
 /* Close button styles */
@@ -677,13 +779,13 @@ p {
   border-bottom: 4px solid black;
   border-left: 4px solid black;
   background: white;
-  font-size: 24px;
+  font-size: 20px;
+  font-weight: 300;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.2s ease;
-  color: black;
 }
 .close-button:hover {
   border-width: 2px;
