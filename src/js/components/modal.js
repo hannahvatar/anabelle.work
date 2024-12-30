@@ -1,25 +1,26 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // Career Timeline Modal
+  // Modal Elements
   const timelineModal = document.getElementById('timelineModal');
   const openTimelineButton = document.getElementById('openTimelineModal');
   const closeTimelineButton = document.getElementById('closeTimelineModal');
 
-  // About Me Modal
   const aboutMeModal = document.getElementById('aboutMeModal');
   const openAboutMeButton = document.getElementById('openAboutMeModal');
   const closeAboutMeButton = document.getElementById('closeAboutMeModal');
 
-  // Desjardins Design System Modal
   const desjardinsModal = document.getElementById('desjardinsModal');
   const openDesjardinsButton = document.querySelector('.dropdown-menu a[href="case-study-2.html"]');
   const closeDesjardinsButton = document.getElementById('closeDesjardinsModal');
 
-  // Grrunch Modal
   const grrunchModal = document.getElementById('grrunchModal');
   const openGrrunchButton = document.querySelector('.dropdown-menu a[href="case-study-1.html"]');
   const closeGrrunchButton = document.getElementById('closeGrrunchModal');
 
-  // Career Timeline Modal Handlers
+  const turoModal = document.getElementById('turoModal');
+  const openTuroButton = document.querySelector('.dropdown-menu a[href="case-study-3.html"]');
+  const closeTuroButton = document.getElementById('closeTuroModal');
+
+  // Timeline Modal Handlers
   if (openTimelineButton) {
     openTimelineButton.addEventListener('click', function(e) {
       e.preventDefault();
@@ -35,7 +36,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Close Career Timeline modal when clicking outside content
   if (timelineModal) {
     timelineModal.addEventListener('click', function(e) {
       if (e.target === timelineModal) {
@@ -61,7 +61,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Close About Me modal when clicking outside content
   if (aboutMeModal) {
     aboutMeModal.addEventListener('click', function(e) {
       if (e.target === aboutMeModal) {
@@ -93,7 +92,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Close Desjardins modal when clicking outside content
   if (desjardinsModal) {
     desjardinsModal.addEventListener('click', function(e) {
       if (e.target === desjardinsModal) {
@@ -125,7 +123,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // Close Grrunch modal when clicking outside content
   if (grrunchModal) {
     grrunchModal.addEventListener('click', function(e) {
       if (e.target === grrunchModal) {
@@ -135,25 +132,47 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  // Turo Modal Handlers
+  if (openTuroButton) {
+    openTuroButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation(); // Prevent dropdown from closing
+
+      // Close any open dropdowns
+      const dropdowns = document.querySelectorAll('.dropdown-menu');
+      dropdowns.forEach(dropdown => dropdown.classList.remove('show'));
+
+      turoModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  }
+
+  if (closeTuroButton) {
+    closeTuroButton.addEventListener('click', function() {
+      turoModal.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+  }
+
+  if (turoModal) {
+    turoModal.addEventListener('click', function(e) {
+      if (e.target === turoModal) {
+        turoModal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  }
+
   // Close modals with Escape key
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
-      if (timelineModal && timelineModal.classList.contains('active')) {
-        timelineModal.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-      if (aboutMeModal && aboutMeModal.classList.contains('active')) {
-        aboutMeModal.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-      if (desjardinsModal && desjardinsModal.classList.contains('active')) {
-        desjardinsModal.classList.remove('active');
-        document.body.style.overflow = '';
-      }
-      if (grrunchModal && grrunchModal.classList.contains('active')) {
-        grrunchModal.classList.remove('active');
-        document.body.style.overflow = '';
-      }
+      const modals = [timelineModal, aboutMeModal, desjardinsModal, grrunchModal, turoModal];
+      modals.forEach(modal => {
+        if (modal && modal.classList.contains('active')) {
+          modal.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      });
     }
   });
 });
