@@ -862,7 +862,6 @@ p {
 .case-study-gallery .gallery-container {
   display: flex;
   gap: 1rem;
-  margin-bottom: 1rem;
   align-items: flex-start;
 }
 @media (max-width: 480px) {
