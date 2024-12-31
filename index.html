@@ -164,7 +164,7 @@
   });
 </script>
 
-<script src="modal.js"></script>
+<script src="src/js/components/modal.js"></script>
 
 <!-- End of TIMELINE -->
 
@@ -194,7 +194,7 @@
   });
 </script>
 
-<script src="modal.js"></script>
+<script src="src/js/components/modal.js"></script>
 
 <!-- End of GRRUNCH -->
 
@@ -222,7 +222,7 @@
   });
 </script>
 
-<script src="modal.js"></script>
+<script src="src/js/components/modal.js"></script>
 
 <!-- End of DESJARDINS -->
 
@@ -241,16 +241,40 @@
 
 <!-- Add the fetch script -->
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    fetch('turo.html')
-      .then(response => response.text())
-      .then(html => {
-        document.getElementById('turoContent').innerHTML = html;
-      });
-  });
+document.addEventListener('DOMContentLoaded', function() {
+  fetch('turo.html')
+    .then(response => response.text())
+    .then(html => {
+      document.getElementById('turoContent').innerHTML = html;
+
+      // Initialize gallery after content is loaded
+      const initGallery = () => {
+        const container = document.querySelector('.gallery-container');
+        const dots = document.querySelectorAll('.dot');
+
+        if (!container || !dots.length) {
+          console.log('Gallery elements not found!');
+          return;
+        }
+
+        container.addEventListener('scroll', () => {
+          const scrollPosition = container.scrollLeft;
+          const itemWidth = container.querySelector('.gallery-item').offsetWidth;
+          const activeIndex = Math.round(scrollPosition / itemWidth);
+
+          dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === activeIndex);
+          });
+        });
+      };
+
+      // Call initGallery after content is loaded
+      initGallery();
+    });
+});
 </script>
 
-<script src="modal.js"></script>
+<script src="src/js/components/modal.js"></script>
 
 <!-- End of TURO -->
 
