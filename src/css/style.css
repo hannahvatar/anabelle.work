@@ -862,12 +862,14 @@ p {
 .case-study-gallery .gallery-container {
   display: flex;
   gap: 1rem;
-  padding-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 @media (max-width: 480px) {
   .case-study-gallery .gallery-container {
+    width: 100%;
     overflow-x: auto;
     flex-wrap: nowrap;
+    scroll-snap-type: x mandatory;
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
@@ -880,9 +882,21 @@ p {
     flex-wrap: wrap;
   }
 }
+.case-study-gallery .gallery-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.case-study-gallery .gallery-item img {
+  width: 100%;
+  display: block;
+  border-radius: 0.5rem;
+  max-width: max-content;
+  margin-top: 1rem;
+}
 @media (max-width: 480px) {
   .case-study-gallery .gallery-item {
-    flex: 0 0 85vw;
+    flex: 0 0 80vw;
     scroll-snap-align: start;
   }
 }
@@ -897,12 +911,6 @@ p {
     width: max(33.333% - 1rem, min(100%, 800px));
   }
 }
-.case-study-gallery .gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 0.5rem;
-}
 .case-study-gallery .scroll-dots {
   display: none;
 }
@@ -911,7 +919,7 @@ p {
     display: flex;
     justify-content: center;
     gap: 0.5rem;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
   }
   .case-study-gallery .scroll-dots .dot {
     width: 8px;
