@@ -278,6 +278,58 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <!-- End of TURO -->
 
+<!-- Wobot Keep your trigger link in the navigation -->
+<a href="case-study-4.html" class="dropdown-menu"><!-- your trigger --></a>
+
+<!-- Add the modal structure -->
+<div class="modal-overlay" id="wobotModal">
+  <div class="modal-content">
+    <button class="close-button" id="closeWobotModal">&times;</button>
+    <div class="case-study-content" id="wobotContent">
+      <!-- This div will be populated by the fetch -->
+    </div>
+  </div>
+</div>
+
+<!-- Add the fetch script -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  fetch('wobot.html')
+    .then(response => response.text())
+    .then(html => {
+      document.getElementById('wobotContent').innerHTML = html;
+
+      // Initialize gallery after content is loaded
+      const initGallery = () => {
+        const container = document.querySelector('.gallery-container');
+        const dots = document.querySelectorAll('.dot');
+
+        if (!container || !dots.length) {
+          console.log('Gallery elements not found!');
+          return;
+        }
+
+        container.addEventListener('scroll', () => {
+          const scrollPosition = container.scrollLeft;
+          const itemWidth = container.querySelector('.gallery-item').offsetWidth;
+          const activeIndex = Math.round(scrollPosition / itemWidth);
+
+          dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === activeIndex);
+          });
+        });
+      };
+
+      // Call initGallery after content is loaded
+      initGallery();
+    });
+});
+</script>
+
+<script src="src/js/components/modal.js"></script>
+
+<!-- End of Wobot -->
+
 
 
 

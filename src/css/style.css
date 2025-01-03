@@ -989,6 +989,11 @@ body.home .clouds {
   display: block;
 }
 
+.logo-image {
+  max-height: 40px;
+  width: auto;
+}
+
 .clouds {
   display: none;
   opacity: 0.4;

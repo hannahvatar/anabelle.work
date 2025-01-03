@@ -20,6 +20,10 @@ document.addEventListener('DOMContentLoaded', function() {
   const openTuroButton = document.querySelector('.dropdown-menu a[href="case-study-3.html"]');
   const closeTuroButton = document.getElementById('closeTuroModal');
 
+  const wobotModal = document.getElementById('wobotModal');
+  const openWobotButton = document.querySelector('.dropdown-menu a[href="case-study-4.html"]');
+  const closeWobotButton = document.getElementById('closeWobotModal');
+
   // Timeline Modal Handlers
   if (openTimelineButton) {
     openTimelineButton.addEventListener('click', function(e) {
@@ -163,10 +167,41 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  // Wobot Modal Handlers
+  if (openWobotButton) {
+    openWobotButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation(); // Prevent dropdown from closing
+
+      // Close any open dropdowns
+      const dropdowns = document.querySelectorAll('.dropdown-menu');
+      dropdowns.forEach(dropdown => dropdown.classList.remove('show'));
+
+      wobotModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  }
+
+  if (closeWobotButton) {
+    closeWobotButton.addEventListener('click', function() {
+      wobotModal.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+  }
+
+  if (wobotModal) {
+    wobotModal.addEventListener('click', function(e) {
+      if (e.target === wobotModal) {
+        wobotModal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  }
+
   // Close modals with Escape key
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
-      const modals = [timelineModal, aboutMeModal, desjardinsModal, grrunchModal, turoModal];
+      const modals = [timelineModal, aboutMeModal, desjardinsModal, grrunchModal, turoModal, wobotModal];
       modals.forEach(modal => {
         if (modal && modal.classList.contains('active')) {
           modal.classList.remove('active');
