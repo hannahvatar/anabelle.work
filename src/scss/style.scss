@@ -34,10 +34,21 @@ body {
 }
 
 
-.logo-image {
-  max-height: 40px;
-  width: auto;
+.logo {
+  width: 100%; // Set to full width
+  display: flex; // Use flexbox
+  justify-content: flex-start; // Align content to the left
+
+  img {
+    max-height: 30px;
+    width: auto;
+
+    @media screen and (max-width: 430px) {
+      max-height: 30px;
+    }
+  }
 }
+
 
 // Cloud styling
 .clouds {

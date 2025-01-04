@@ -989,9 +989,19 @@ body.home .clouds {
   display: block;
 }
 
-.logo-image {
-  max-height: 40px;
+.logo {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+.logo img {
+  max-height: 30px;
   width: auto;
+}
+@media screen and (max-width: 430px) {
+  .logo img {
+    max-height: 30px;
+  }
 }
 
 .clouds {
