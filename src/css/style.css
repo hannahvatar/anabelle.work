@@ -955,6 +955,10 @@ p {
   }
 }
 
+.video {
+  margin-top: 1rem;
+}
+
 @keyframes clouds-loop-clouds_2 {
   to {
     background-position: -1000px 0;
@@ -1052,6 +1056,10 @@ p {
   font-style: normal;
   line-height: 1.25rem;
   font-size: 14px;
+}
+
+video {
+  margin-top: 1rem;
 }
 
 /*# sourceMappingURL=style.css.map */
