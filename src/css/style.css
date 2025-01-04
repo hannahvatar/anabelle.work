@@ -858,6 +858,7 @@ p {
 
 .case-study-gallery {
   width: 100%;
+  /* Optional: Ensure SVGs maintain their vector quality */
 }
 .case-study-gallery .gallery-container {
   display: flex;
@@ -913,6 +914,21 @@ p {
   border-radius: 0.5rem;
   max-width: max-content;
   margin-top: 1rem;
+}
+.case-study-gallery img, .case-study-gallery svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  object-fit: contain;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  shape-rendering: geometricPrecision;
+}
+.case-study-gallery svg {
+  max-width: 100%;
+  max-height: 100%;
 }
 .case-study-gallery .scroll-dots {
   display: none;

@@ -56,6 +56,24 @@
     }
   }
 
+  img, svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    object-fit: contain;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    shape-rendering: geometricPrecision;
+  }
+
+  /* Optional: Ensure SVGs maintain their vector quality */
+  svg {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
   .scroll-dots {
     display: none;
 
