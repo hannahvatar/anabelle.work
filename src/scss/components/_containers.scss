@@ -9,11 +9,38 @@
 }
 
 .container-fluid {
-  display: flex;
-  align-items: center;
-  justify-content: center; /* Center the content inside the container */
+  position: relative;
   width: 100%;
-  max-width: 1200px; /* Restrict the container's maximum width */
-  margin: 0 auto; /* Center the container horizontally */
-  gap: 32px;
+  max-width: 1200px; /* Restrict overall container width */
+  margin: 0 auto;
+}
+
+.container-hp {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px; /* Restrict overall container width */
+  margin: 0 auto;
+
+  // Responsive styles for smaller screens
+  @media screen and (max-width: 768px) {
+    max-width: 90%; /* Reduce max width for medium screens */
+  }
+
+  @media screen and (max-width: 480px) {
+    flex-direction: column; /* Stack items vertically for small screens */
+    max-width: 100%; /* Utilize the full width */
+    padding: 0 10px; /* Add some padding for smaller screens */
+  }
+}
+
+// Example styles for child elements to respond inside the container
+.container-hp > * {
+  flex: 1; /* Make child elements flexible */
+  max-width: 100%; /* Ensure children don't exceed the container's width */
+  margin: 5px; /* Add spacing between children */
+
+  @media screen and (max-width: 480px) {
+    margin: 10px 0; /* Increase vertical spacing for stacked items */
+  }
 }
