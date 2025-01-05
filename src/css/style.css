@@ -90,22 +90,30 @@
 
 .home-title {
   position: absolute; /* Now relative to .container-hp */
-  top: 50%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: "Uncial Antiqua", serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 4.5rem;
+  font-size: 5rem;
   text-align: center;
-  max-width: 900px;
+  width: 80% !important;
   z-index: 2;
+  color: white;
 }
 @media screen and (max-width: 768px) {
   .home-title {
-    font-size: 2.5rem;
+    font-size: 3.5rem;
     max-width: 90%;
-    top: 60%; /* Adjust position for smaller screens */
+    top: 35%; /* Adjust position for smaller screens */
+  }
+}
+@media screen and (max-width: 430px) {
+  .home-title {
+    font-size: 3.5rem;
+    max-width: 90%;
+    top: 40%; /* Adjust position for smaller screens */
   }
 }
 
@@ -420,31 +428,31 @@ p {
 .container-hp {
   display: flex;
   justify-content: center;
+  align-items: center; /* Align items vertically in the center */
   width: 100%;
-  max-width: 1200px; /* Restrict overall container width */
+  max-width: 1200px;
   margin: 0 auto;
 }
 @media screen and (max-width: 768px) {
   .container-hp {
-    max-width: 90%; /* Reduce max width for medium screens */
+    max-width: 90%;
   }
 }
 @media screen and (max-width: 480px) {
   .container-hp {
-    flex-direction: column; /* Stack items vertically for small screens */
-    max-width: 100%; /* Utilize the full width */
-    padding: 0 10px; /* Add some padding for smaller screens */
+    flex-direction: column;
+    max-width: 100%;
+    padding: 0 10px;
   }
 }
 
 .container-hp > * {
-  flex: 1; /* Make child elements flexible */
-  max-width: 100%; /* Ensure children don't exceed the container's width */
-  margin: 5px; /* Add spacing between children */
+  flex: unset; /* Remove the flex-grow behavior */
+  margin: 5px;
 }
 @media screen and (max-width: 480px) {
   .container-hp > * {
-    margin: 10px 0; /* Increase vertical spacing for stacked items */
+    margin: 10px 0;
   }
 }
 

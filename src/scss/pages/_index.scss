@@ -48,28 +48,30 @@
 }
 
 .image-container {
-  position: relative; /* Ensures proper layout context */
-  width: 100%; /* Full-width responsive container */
-  max-width: 1200px; /* Restrict the maximum width of the container */
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
-  overflow: hidden; /* Ensures no overflow issues */
+  overflow: hidden;
 
   img {
-    display: block; /* Removes extra spacing below the image */
-    width: 100%; /* Makes the image scale responsively */
-    height: auto; /* Maintains aspect ratio */
-    object-fit: contain; /* Ensures the image scales to fit its container */
+    display: block;
+    max-width: 600px; // The image will stop growing beyond this width
+    width: 100%; // Keeps it responsive up to 600px
+    height: auto; // Maintains aspect ratio
+    margin: 0 auto; // Centers the image
   }
 }
 
 @media screen and (max-width: 430px) {
   .image-container {
-    max-width: 300px; /* Shrink the container on smaller screens */
+    max-width: 300px;
     margin: 0 auto;
 
     img {
-      width: 100%; /* Image scales with its container */
-      height: auto; /* Maintains aspect ratio */
+      max-width: 300px; // Limit image size to the smaller container
+      width: 100%;
+      height: auto;
     }
   }
 }
