@@ -24,6 +24,10 @@ document.addEventListener('DOMContentLoaded', function() {
   const openWobotButton = document.querySelector('.dropdown-menu a[href="case-study-4.html"]');
   const closeWobotButton = document.getElementById('closeWobotModal');
 
+  const moreModal = document.getElementById('moreModal');
+  const openMoreButton = document.querySelector('.dropdown-menu a[href="case-study-5.html"]');
+  const closeMoreButton = document.getElementById('closeMoreModal');
+
   // Timeline Modal Handlers
   if (openTimelineButton) {
     openTimelineButton.addEventListener('click', function(e) {
@@ -198,10 +202,41 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
+  // More Modal Handlers
+  if (openMoreButton) {
+    openMoreButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation(); // Prevent dropdown from closing
+
+      // Close any open dropdowns
+      const dropdowns = document.querySelectorAll('.dropdown-menu');
+      dropdowns.forEach(dropdown => dropdown.classList.remove('show'));
+
+      moreModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+  }
+
+  if (closeMoreButton) {
+    closeMoreButton.addEventListener('click', function() {
+      moreModal.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+  }
+
+  if (moreModal) {
+    moreModal.addEventListener('click', function(e) {
+      if (e.target === moreModal) {
+        moreModal.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  }
+
   // Close modals with Escape key
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
-      const modals = [timelineModal, aboutMeModal, desjardinsModal, grrunchModal, turoModal, wobotModal];
+      const modals = [timelineModal, aboutMeModal, desjardinsModal, grrunchModal, turoModal, wobotModal, moreModal];
       modals.forEach(modal => {
         if (modal && modal.classList.contains('active')) {
           modal.classList.remove('active');
