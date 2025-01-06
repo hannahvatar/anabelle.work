@@ -34,6 +34,11 @@ document.addEventListener('DOMContentLoaded', function() {
       e.preventDefault();
       timelineModal.classList.add('active');
       document.body.style.overflow = 'hidden';
+      // Track Timeline view
+      gtag('config', 'G-YOUR-ID', {
+        'page_title': 'Timeline',
+        'page_path': '/timeline'
+      });
     });
   }
 
@@ -59,6 +64,11 @@ document.addEventListener('DOMContentLoaded', function() {
       e.preventDefault();
       aboutMeModal.classList.add('active');
       document.body.style.overflow = 'hidden';
+      // Track About Me view
+      gtag('config', 'G-YOUR-ID', {
+        'page_title': 'About Me',
+        'page_path': '/about'
+      });
     });
   }
 
@@ -90,6 +100,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
       desjardinsModal.classList.add('active');
       document.body.style.overflow = 'hidden';
+      // Track Desjardins case study view
+      gtag('config', 'G-YOUR-ID', {
+        'page_title': 'Desjardins Case Study',
+        'page_path': '/case-studies/desjardins'
+      });
     });
   }
 
@@ -121,6 +136,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
       grrunchModal.classList.add('active');
       document.body.style.overflow = 'hidden';
+      // Track Grrunch case study view
+      gtag('config', 'G-YOUR-ID', {
+        'page_title': 'Grrunch Case Study',
+        'page_path': '/case-studies/grrunch'
+      });
     });
   }
 
@@ -152,6 +172,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
       turoModal.classList.add('active');
       document.body.style.overflow = 'hidden';
+      // Track Turo case study view
+      gtag('config', 'G-YOUR-ID', {
+        'page_title': 'Turo Case Study',
+        'page_path': '/case-studies/turo'
+      });
     });
   }
 
@@ -183,6 +208,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
       wobotModal.classList.add('active');
       document.body.style.overflow = 'hidden';
+      // Track Wobot case study view
+      gtag('config', 'G-YOUR-ID', {
+        'page_title': 'Wobot Case Study',
+        'page_path': '/case-studies/wobot'
+      });
     });
   }
 
@@ -214,6 +244,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
       moreModal.classList.add('active');
       document.body.style.overflow = 'hidden';
+      // Track More Projects view
+      gtag('config', 'G-YOUR-ID', {
+        'page_title': 'More Projects',
+        'page_path': '/case-studies/more'
+      });
     });
   }
 

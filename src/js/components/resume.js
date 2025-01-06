@@ -6,9 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
   const resumePreviewModal = document.getElementById('resumePreviewModal');
   const closePreviewBtn = document.getElementById('closePreviewBtn');
 
-  // Remove click event for dropdown toggle
-  // Hover functionality will be handled by CSS
-
   // View Resume Online (only active on desktop)
   viewOnlineBtn.addEventListener('click', function(e) {
     e.preventDefault();
@@ -17,6 +14,12 @@ document.addEventListener('DOMContentLoaded', function() {
     if (window.innerWidth > 768) {
       resumeDropdownContent.classList.remove('show');
       resumePreviewModal.style.display = 'block';
+
+      // Track resume online view
+      gtag('config', 'G-YOUR-ID', {
+        'page_title': 'Resume Online View',
+        'page_path': '/resume/online'
+      });
     }
   });
 
@@ -36,6 +39,12 @@ document.addEventListener('DOMContentLoaded', function() {
   printResumeBtn.addEventListener('click', function(e) {
     e.preventDefault();
     resumeDropdownContent.classList.remove('show');
+
+    // Track resume download/print
+    gtag('config', 'G-YOUR-ID', {
+      'page_title': 'Resume Download',
+      'page_path': '/resume/download'
+    });
 
     // Direct link to PDF for printing
     const pdfUrl = 'src/images/adubois-resume.pdf';
