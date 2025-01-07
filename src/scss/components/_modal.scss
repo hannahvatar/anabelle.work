@@ -121,6 +121,17 @@
 .timeline-date {
   display: flex;
   justify-content: flex-start;
+  align-items: flex-end;
+  width: 60px;
+  padding-right: 4px;
+  font-weight: 600;
+  text-align: left;
+}
+
+.timeline-date-top {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
   width: 60px;
   padding-right: 4px;
   font-weight: 600;
